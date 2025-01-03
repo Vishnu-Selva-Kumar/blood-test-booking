@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class StorePackageRequest extends BaseRequest
+class UpdateServiceRequest extends StoreServiceRequest
 {
 
 
