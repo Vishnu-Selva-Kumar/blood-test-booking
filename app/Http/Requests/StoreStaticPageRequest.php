@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class StoreServiceRequest extends BaseRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreStaticPageRequest extends BaseRequest
 {
 
 

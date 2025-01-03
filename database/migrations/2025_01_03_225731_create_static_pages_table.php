@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('static_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table ->string('short_description')->nullable();
+            $table->string('title')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->text('long_description')->nullable();
-            $table->string('image')->nullable();
-            $table->double('price', 8, 2)->nullable();
-            $table->double('special_price', 8, 2)->nullable();
+            $table->string('images')->nullable();
             $table->integer('status')->default(config('web.constants.status.active'));
             $table->timestamps();
         });
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('static_pages');
     }
 };
