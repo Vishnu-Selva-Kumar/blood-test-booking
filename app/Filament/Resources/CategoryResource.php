@@ -31,6 +31,7 @@ class CategoryResource extends Resource
                     ->label('Name')
                     ->required(),
 
+
                 Select::make('status')
                     ->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                 //
