@@ -9,4 +9,9 @@ class Category extends BaseModel
 {
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory;
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
 }
