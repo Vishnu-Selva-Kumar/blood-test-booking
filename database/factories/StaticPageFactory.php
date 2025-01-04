@@ -17,6 +17,11 @@ class StaticPageFactory extends Factory
     public function definition(): array
     {
         return [
+            'title' => $this->faker->sentence,
+            'slug' => $this->faker->slug,
+            'long_description' => $this->faker->paragraph,
+            'images' => $this->faker->imageUrl(),
+            'status' => $this->faker->randomElement([0, 1]),
             //
         ];
     }
