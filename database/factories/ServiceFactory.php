@@ -18,6 +18,7 @@ class ServiceFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'slug' => $this->faker->slug,
             'short_description' => $this->faker->sentence,
             'long_description' => $this->faker->paragraph,
             'image' => $this->faker->imageUrl(),
