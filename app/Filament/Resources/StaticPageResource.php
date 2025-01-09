@@ -2,16 +2,14 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
-use App\Models\Service;
-use Faker\Provider\ar_EG\Text;
+use App\Filament\Resources\StaticPageResource\Pages;
+use App\Filament\Resources\StaticPageResource\RelationManagers;
+use App\Models\StaticPage;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,9 +22,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
 
-class ServiceResource extends Resource
+class StaticPageResource extends Resource
 {
-    protected static ?string $model = Service::class;
+    protected static ?string $model = StaticPage::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -39,10 +37,6 @@ class ServiceResource extends Resource
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
-                        TextInput::make('price')->label('Price')->required()->numeric(),
-                        TextInput::make('special_price')->label('Special Price')->numeric(),
-                        FileUpload::make('image')->image()->directory('services'),
-                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull(),
                         MarkdownEditor::make('long_description')->toolbarButtons([
                             'attachFiles',
                             'blockquote',
@@ -58,10 +52,10 @@ class ServiceResource extends Resource
                             'table',
                             'undo',
                         ])->label('Description')->columnSpanFull(),
+                        FileUpload::make('images')->image()->directory('staticpages'),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                     ])
-
-
+                //
             ]);
     }
 
@@ -79,6 +73,9 @@ class ServiceResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -97,9 +94,9 @@ class ServiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListServices::route('/'),
-            'create' => Pages\CreateService::route('/create'),
-            'edit' => Pages\EditService::route('/{record}/edit'),
+            'index' => Pages\ListStaticPages::route('/'),
+            'create' => Pages\CreateStaticPage::route('/create'),
+            'edit' => Pages\EditStaticPage::route('/{record}/edit'),
         ];
     }
 }
