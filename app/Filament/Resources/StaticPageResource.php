@@ -2,54 +2,48 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PackageResource\Pages;
-use App\Filament\Resources\PackageResource\RelationManagers;
-use App\Models\Category;
-use App\Models\Package;
+use App\Filament\Resources\StaticPageResource\Pages;
+use App\Filament\Resources\StaticPageResource\RelationManagers;
+use App\Models\StaticPage;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\SelectColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
-use Filament\Tables\Columns\SelectColumn;
-use Filament\Tables\Columns\TextColumn;
 
-class PackageResource extends Resource
+class StaticPageResource extends Resource
 {
-    protected static ?string $model = Package::class;
+    protected static ?string $model = StaticPage::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+
     public static function getNavigationSort(): ?int
     {
-        return 2;
+        return 4;
     }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-
                 Section::make()
                     ->columns(3)
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
-                        Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required(),
-                        FileUpload::make('image')->image()->directory('packages'),
-                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
-                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull(),
-                        MarkdownEditor::make('description')->toolbarButtons([
+                        MarkdownEditor::make('long_description')->toolbarButtons([
                             'attachFiles',
                             'blockquote',
                             'bold',
@@ -64,7 +58,9 @@ class PackageResource extends Resource
                             'table',
                             'undo',
                         ])->label('Description')->columnSpanFull(),
-                    ]),
+                        FileUpload::make('images')->image()->directory('staticpages'),
+                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                    ])
                 //
             ]);
     }
@@ -75,7 +71,6 @@ class PackageResource extends Resource
             ->columns([
                 TextColumn::make('id')->searchable()->sortable(),
                 TextColumn::make('title')->searchable()->sortable(),
-                TextColumn::make('category.name')->label('Category')->searchable()->sortable(),
                 SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
                 //
             ])
@@ -85,13 +80,14 @@ class PackageResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ])
-            ->defaultSort('id', 'desc'); // Add this line to set default sort order
+            ])->defaultSort('id', 'desc');
     }
 
     public static function getRelations(): array
@@ -104,9 +100,9 @@ class PackageResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPackages::route('/'),
-            'create' => Pages\CreatePackage::route('/create'),
-            'edit' => Pages\EditPackage::route('/{record}/edit'),
+            'index' => Pages\ListStaticPages::route('/'),
+            'create' => Pages\CreateStaticPage::route('/create'),
+            'edit' => Pages\EditStaticPage::route('/{record}/edit'),
         ];
     }
 }

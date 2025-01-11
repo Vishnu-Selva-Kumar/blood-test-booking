@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('phone_number');
             $table->text('address');
             $table->integer('age');
-            $table->date('appointment_at');
-            $table->integer('status')->default(config('web.constants.status.active'));
+            $table->dateTime('appointment_at');
+            $table->integer('status')->default(config('web.constants.booking_status.new'));
             $table->timestamps();
         });
     }

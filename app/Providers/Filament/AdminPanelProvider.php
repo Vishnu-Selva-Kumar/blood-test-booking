@@ -20,6 +20,8 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 use Filament\Navigation\MenuItem;
 use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
+use Filament\Support\Enums\MaxWidth;
+
 
 
 
@@ -72,8 +74,14 @@ class AdminPanelProvider extends PanelProvider
             // ])
 
             ->plugins([
-                FilamentEditProfilePlugin::make() ->setIcon('heroicon-m-user-circle')->setNavigationLabel('My Profile')
+                FilamentEditProfilePlugin::make()->setIcon('heroicon-m-user-circle')->setNavigationLabel('My Profile')
 
-            ]);
+            ])
+            ->sidebarCollapsibleOnDesktop()
+            ->spa()
+            ->unsavedChangesAlerts()
+            // ->maxContentWidth(MaxWidth::Full)
+            // ->sidebarFullyCollapsibleOnDesktop()
+        ;
     }
 }

@@ -22,8 +22,8 @@ class PackageFactory extends Factory
             'slug' => $this->faker->slug,
             'category_id' => Category::inRandomOrder()->first()->id,
             'image' => $this->faker->imageUrl(),
-            'short_descrtiption' => $this->faker->sentence,
-            'descrtiption' => $this->faker->paragraph,
+            'short_description' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
             'status' => fake()->randomElement([1, 0]),
         ];
     }

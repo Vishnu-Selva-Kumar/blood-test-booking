@@ -6,6 +6,7 @@ use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -23,18 +24,21 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name')
-                    ->label('Name')
-                    ->required(),
-
-
-                Select::make('status')
-                    ->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
-                //
+                Section::make()
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('name')->label('Name')->required(),
+                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                    ])
             ]);
     }
 
@@ -42,9 +46,7 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable()
-                    ->sortable(),
+                TextColumn::make('name')->searchable()->sortable(),
                 SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
                 //
             ])
