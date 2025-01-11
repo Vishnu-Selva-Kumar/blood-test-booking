@@ -26,6 +26,14 @@ class BookingResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected ?string $maxContentWidth = "full";
+
+
+    public static function getNavigationSort(): ?int
+    {
+        return 5;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -41,8 +49,6 @@ class BookingResource extends Resource
                         DateTimePicker::make('appointment_at'),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status')))),
                     ])
-
-
                 //
             ]);
     }

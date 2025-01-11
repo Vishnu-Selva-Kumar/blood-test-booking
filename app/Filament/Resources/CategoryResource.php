@@ -24,6 +24,11 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -34,9 +39,6 @@ class CategoryResource extends Resource
                         TextInput::make('name')->label('Name')->required(),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                     ])
-
-
-                //
             ]);
     }
 
