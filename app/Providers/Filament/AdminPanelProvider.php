@@ -78,6 +78,8 @@ class AdminPanelProvider extends PanelProvider
 
             ])
             ->sidebarCollapsibleOnDesktop()
+            ->spa()
+            ->unsavedChangesAlerts()
             // ->maxContentWidth(MaxWidth::Full)
             // ->sidebarFullyCollapsibleOnDesktop()
         ;
