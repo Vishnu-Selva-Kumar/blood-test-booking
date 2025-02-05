@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('web.')->group(function () {
+
+    Route::view('/', 'home')->name('home');
+
 });

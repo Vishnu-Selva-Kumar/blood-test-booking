@@ -24,3 +24,4 @@ yarn-error.log
 /public/docs
 package-lock.json
 composer.lock
+package-lock.json
