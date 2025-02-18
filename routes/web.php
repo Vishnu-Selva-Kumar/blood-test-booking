@@ -13,4 +13,5 @@ Route::name('web.')->group(function () {
     Route::view('/doctor-detail', 'doctor-details')->name('doctor-details');
     Route::view('/service', 'service')->name('service');
     Route::view('/service-details', 'service-details')->name('service-details');
+    Route::view('/appointment', 'appointment')->name('appointment');
 });

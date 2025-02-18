@@ -69,10 +69,10 @@
 						<div class="col-lg-6 col-md-5 col-12">
 							<!-- Contact -->
 							<ul class="top-link">
-								<li><a href="assets/#">About</a></li>
-								<li><a href="assets/#">Doctors</a></li>
-								<li><a href="assets/#">Contact</a></li>
-								<li><a href="assets/#">FAQ</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Doctors</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">FAQ</a></li>
 							</ul>
 							<!-- End Contact -->
 						</div>
@@ -96,7 +96,7 @@
 							<div class="col-lg-3 col-md-3 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a href="assets/index.html"><img src="assets/img/logo.png" alt="#"></a>
+									<a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
 								</div>
 								<!-- End Logo -->
 								<!-- Mobile Nav -->
@@ -108,19 +108,19 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="assets/#">Home <i class="icofont-rounded-down"></i></a>
+											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="assets/index.html">Home Page 1</a></li>
 												</ul>
 											</li>
-											<li><a href="assets/#">Doctos </a></li>
-											<li><a href="assets/#">Services </a></li>
-											<li><a href="assets/#">Pages <i class="icofont-rounded-down"></i></a>
+											<li><a href="#">Doctos </a></li>
+											<li><a href="#">Services </a></li>
+											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="assets/404.html">404 Error</a></li>
 												</ul>
 											</li>
-											<li><a href="assets/#">Blogs <i class="icofont-rounded-down"></i></a>
+											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="assets/blog-single.html">Blog Details</a></li>
 												</ul>
@@ -156,8 +156,8 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="assets/#" class="btn">Get Appointment</a>
-										<a href="assets/#" class="btn primary">Learn More</a>
+										<a href="#" class="btn">Get Appointment</a>
+										<a href="#" class="btn primary">Learn More</a>
 									</div>
 								</div>
 							</div>
@@ -174,8 +174,8 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="assets/#" class="btn">Get Appointment</a>
-										<a href="assets/#" class="btn primary">About Us</a>
+										<a href="#" class="btn">Get Appointment</a>
+										<a href="#" class="btn primary">About Us</a>
 									</div>
 								</div>
 							</div>
@@ -192,8 +192,8 @@
 									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
-										<a href="assets/#" class="btn">Get Appointment</a>
-										<a href="assets/#" class="btn primary">Conatct Now</a>
+										<a href="#" class="btn">Get Appointment</a>
+										<a href="#" class="btn primary">Conatct Now</a>
 									</div>
 								</div>
 							</div>
@@ -221,7 +221,7 @@
 										<span>Lorem Amet</span>
 										<h4>Emergency Cases</h4>
 										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="assets/#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -237,7 +237,7 @@
 										<span>Fusce Porttitor</span>
 										<h4>Doctors Timetable</h4>
 										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="assets/#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -257,7 +257,7 @@
 											<li class="day">Saturday <span>9.00-18.30</span></li>
 											<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
 										</ul>
-										<a href="assets/#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -442,8 +442,8 @@
 							<h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
 							<div class="button">
-								<a href="assets/#" class="btn">Contact Now</a>
-								<a href="assets/#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
+								<a href="#" class="btn">Contact Now</a>
+								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -615,7 +615,7 @@
 								<li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
 							</ul>
 							<div class="table-bottom">
-								<a class="btn" href="assets/#">Book Now</a>
+								<a class="btn" href="#">Book Now</a>
 							</div>
 							<!-- Table Bottom -->
 						</div>
@@ -643,7 +643,7 @@
 								<li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
 							</ul>
 							<div class="table-bottom">
-								<a class="btn" href="assets/#">Book Now</a>
+								<a class="btn" href="#">Book Now</a>
 							</div>
 							<!-- Table Bottom -->
 						</div>
@@ -671,7 +671,7 @@
 								<li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
 							</ul>
 							<div class="table-bottom">
-								<a class="btn" href="assets/#">Book Now</a>
+								<a class="btn" href="#">Book Now</a>
 							</div>
 							<!-- Table Bottom -->
 						</div>
@@ -921,11 +921,11 @@
 								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="assets/#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="assets/#"><i class="icofont-google-plus"></i></a></li>
-									<li><a href="assets/#"><i class="icofont-twitter"></i></a></li>
-									<li><a href="assets/#"><i class="icofont-vimeo"></i></a></li>
-									<li><a href="assets/#"><i class="icofont-pinterest"></i></a></li>
+									<li><a href="#"><i class="icofont-facebook"></i></a></li>
+									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
+									<li><a href="#"><i class="icofont-twitter"></i></a></li>
+									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
+									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
 								</ul>
 								<!-- End Social -->
 							</div>
@@ -936,20 +936,20 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
-											<li><a href="assets/#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
 										</ul>
 									</div>
 								</div>
