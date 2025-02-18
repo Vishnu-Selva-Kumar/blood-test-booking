@@ -77,7 +77,7 @@
 							<!-- Top Contact -->
 							<ul class="top-contact">
 								<li><i class="fa fa-phone"></i>+880 1234 56789</li>
-								<li><i class="fa fa-envelope"></i><a href="assets/mailto:support@yourmail.com">support@yourmail.com</a></li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -100,13 +100,15 @@
 								<div class="mobile-nav"></div>
 								<!-- End Mobile Nav -->
 							</div>
+
 							<div class="col-lg-7 col-md-9 col-12">
 								<!-- Main Menu -->
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home </a></li>
+											<li class="active"><a href="">Home </a></li>
 											<li><a href="service">Services </a></li>
+											<li><a href="service-details">Packages </a></li>
 											<li><a href="contact-us">Contact Us</a></li>
 										</ul>
 									</nav>
@@ -353,7 +355,7 @@
 									</div>
 								</div>
 								<!--/ End Video Animation -->
-								<a href="assets/https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+								<a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
 							</div>
 						</div>
 						<!-- End Choose Rights -->
@@ -401,35 +403,35 @@
 						<div class="owl-carousel portfolio-slider">
 							<div class="single-pf">
 								<img src="assets/img/pf1.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf2.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf3.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf4.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf1.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf2.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf3.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 							<div class="single-pf">
 								<img src="assets/img/pf4.jpg" alt="#">
-								<a href="assets/portfolio-details.html" class="btn">View Details</a>
+								<a href="portfolio-details.html" class="btn">View Details</a>
 							</div>
 						</div>
 					</div>
@@ -455,7 +457,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-prescription"></i>
-							<h4><a href="assets/service-details.html">General Treatment</a></h4>
+							<h4><a href="service-details.html">General Treatment</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -464,7 +466,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-tooth"></i>
-							<h4><a href="assets/service-details.html">Teeth Whitening</a></h4>
+							<h4><a href="service-details.html">Teeth Whitening</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -473,7 +475,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-heart-alt"></i>
-							<h4><a href="assets/service-details.html">Heart Surgery</a></h4>
+							<h4><a href="service-details.html">Heart Surgery</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -482,7 +484,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-listening"></i>
-							<h4><a href="assets/service-details.html">Ear Treatment</a></h4>
+							<h4><a href="service-details.html">Ear Treatment</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -491,7 +493,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-eye-alt"></i>
-							<h4><a href="assets/service-details.html">Vision Problems</a></h4>
+							<h4><a href="service-details.html">Vision Problems</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -500,7 +502,7 @@
 						<!-- Start Single Service -->
 						<div class="single-service">
 							<i class="icofont icofont-blood"></i>
-							<h4><a href="assets/service-details.html">Blood Transfusion</a></h4>
+							<h4><a href="service-details.html">Blood Transfusion</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
 						</div>
 						<!-- End Single Service -->
@@ -636,7 +638,7 @@
 							<div class="news-body">
 								<div class="news-content">
 									<div class="date">22 Aug, 2020</div>
-									<h2><a href="assets/blog-single.html">We have annnocuced our new product.</a></h2>
+									<h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
 									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
 								</div>
 							</div>
@@ -652,7 +654,7 @@
 							<div class="news-body">
 								<div class="news-content">
 									<div class="date">15 Jul, 2020</div>
-									<h2><a href="assets/blog-single.html">Top five way for solving teeth problems.</a></h2>
+									<h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
 									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
 								</div>
 							</div>
@@ -668,7 +670,7 @@
 							<div class="news-body">
 								<div class="news-content">
 									<div class="date">05 Jan, 2020</div>
-									<h2><a href="assets/blog-single.html">We provide highly business soliutions.</a></h2>
+									<h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
 									<p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
 								</div>
 							</div>
@@ -890,7 +892,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>© Copyright 2018  |  All Rights Reserved by <a href="assets/https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
+								<p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
 							</div>
 						</div>
 					</div>

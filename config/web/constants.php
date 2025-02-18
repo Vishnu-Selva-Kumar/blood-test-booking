@@ -13,4 +13,14 @@ return [
         'pending' => 4,
         'rejected' => 5,
     ],
+    'static-pages' => [
+        'about-us',
+        'contact-us',
+        'terms-conditions',
+        'privacy-policy',
+        'refund-policy',
+        'help-center',
+
+    ],
+
 ];

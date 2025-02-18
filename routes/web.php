@@ -1,12 +1,16 @@
 <?php
 
+use App\Http\Controllers\StaticPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::name('web.')->group(function () {
+
+    Route::get('/{slug}', [StaticPageController::class, 'index'])->name('static.page')
+        ->whereIn('slug', config('web.constants.static-pages') ?? []);
+
+
     Route::view('/', 'home')->name('home');
     Route::view('/index.html', 'home')->name('home.index');
-    Route::view('/contact-us', 'contact-us')->name('contact-us');
-    // Route::view('/404', '404')->name('404');
     Route::view('/portfolio-details', 'portfolio-details')->name('portfolio-details');
     Route::view('/doctors', 'doctors')->name('doctors');
     Route::view('/blog-detail', 'blog-details')->name('blog-details');
