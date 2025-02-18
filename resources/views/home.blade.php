@@ -33,15 +33,12 @@
         <link rel="stylesheet" href="assets/css/animate.min.css">
 		<!-- Magnific Popup CSS -->
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
 		<!-- Medipro CSS -->
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
-
     </head>
     <body>
-
 		<!-- Preloader -->
         <div class="preloader">
             <div class="loader">
@@ -68,12 +65,12 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-5 col-12">
 							<!-- Contact -->
-							<ul class="top-link">
+							<!-- <ul class="top-link">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Doctors</a></li>
 								<li><a href="#">Contact</a></li>
 								<li><a href="#">FAQ</a></li>
-							</ul>
+							</ul>  -->
 							<!-- End Contact -->
 						</div>
 						<div class="col-lg-6 col-md-7 col-12">
@@ -108,32 +105,18 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="assets/index.html">Home Page 1</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Doctos </a></li>
-											<li><a href="#">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="assets/404.html">404 Error</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="assets/blog-single.html">Blog Details</a></li>
-												</ul>
-											</li>
-											<li><a href="assets/contact.html">Contact Us</a></li>
+											<li class="active"><a href="#">Home </a></li>
+											<li><a href="service">Services </a></li>
+											<li><a href="contact-us">Contact Us</a></li>
 										</ul>
 									</nav>
 								</div>
 								<!--/ End Main Menu -->
 							</div>
+
 							<div class="col-lg-2 col-12">
 								<div class="get-quote">
-									<a href="assets/appointment.html" class="btn">Book Appointment</a>
+									<a href="appointment" class="btn">Book Appointment</a>
 								</div>
 							</div>
 						</div>
@@ -209,60 +192,7 @@
 		<section class="schedule">
 			<div class="container">
 				<div class="schedule-inner">
-					<div class="row">
-						<div class="col-lg-4 col-md-6 col-12 ">
-							<!-- single-schedule -->
-							<div class="single-schedule first">
-								<div class="inner">
-									<div class="icon">
-										<i class="fa fa-ambulance"></i>
-									</div>
-									<div class="single-content">
-										<span>Lorem Amet</span>
-										<h4>Emergency Cases</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule middle">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-prescription"></i>
-									</div>
-									<div class="single-content">
-										<span>Fusce Porttitor</span>
-										<h4>Doctors Timetable</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-12 col-12">
-							<!-- single-schedule -->
-							<div class="single-schedule last">
-								<div class="inner">
-									<div class="icon">
-										<i class="icofont-ui-clock"></i>
-									</div>
-									<div class="single-content">
-										<span>Donec luctus</span>
-										<h4>Opening Hours</h4>
-										<ul class="time-sidual">
-											<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-											<li class="day">Saturday <span>9.00-18.30</span></li>
-											<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-										</ul>
-										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</section>
@@ -881,33 +811,6 @@
 		</section>
 		<!-- End Appointment -->
 
-		<!-- Start Newsletter Area -->
-		<section class="newsletter section">
-			<div class="container">
-				<div class="row ">
-					<div class="col-lg-6  col-12">
-						<!-- Start Newsletter Form -->
-						<div class="subscribe-text ">
-							<h6>Sign up for newsletter</h6>
-							<p class="">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,<br> homero alterum.</p>
-						</div>
-						<!-- End Newsletter Form -->
-					</div>
-					<div class="col-lg-6  col-12">
-						<!-- Start Newsletter Form -->
-						<div class="subscribe-form ">
-							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-								<input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = 'Your email address'" required="" type="email">
-								<button class="btn">Subscribe</button>
-							</form>
-						</div>
-						<!-- End Newsletter Form -->
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /End Newsletter Area -->
 
 		<!-- Footer Area -->
 		<footer id="footer" class="footer ">
