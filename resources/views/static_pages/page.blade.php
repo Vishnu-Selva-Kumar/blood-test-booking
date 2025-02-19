@@ -67,7 +67,6 @@
     <!-- End Preloader -->
 
 
-
     <!-- Header Area -->
     <header class="header">
         <!-- Topbar -->
@@ -77,11 +76,11 @@
                     <div class="col-lg-6 col-md-5 col-12">
                         <!-- Contact -->
                         <!-- <ul class="top-link">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Doctors</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">FAQ</a></li>
-       </ul>  -->
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>  -->
                         <!-- End Contact -->
                     </div>
                     <div class="col-lg-6 col-md-7 col-12">
@@ -89,7 +88,7 @@
                         <ul class="top-contact">
                             <li><i class="fa fa-phone"></i>+880 1234 56789</li>
                             <li><i class="fa fa-envelope"></i><a
-                                    href="assets/mailto:support@yourmail.com">support@yourmail.com</a></li>
+                                    href="mailto:support@yourmail.com">support@yourmail.com</a></li>
                         </ul>
                         <!-- End Top Contact -->
                     </div>
@@ -101,8 +100,7 @@
         <div class="header-inner">
             <div class="container">
                 <div class="inner">
-                    <div class="row align-items-center">
-
+                    <div class="row">
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
@@ -119,8 +117,9 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="/">Home </a></li>
+                                        <li class="active"><a href="">Home </a></li>
                                         <li><a href="service">Services </a></li>
+                                        <li><a href="packages">Packages </a></li>
                                         <li><a href="contact-us">Contact Us</a></li>
                                     </ul>
                                 </nav>
@@ -130,7 +129,7 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="appointment.html" class="btn"> Appointment</a>
+                                <a href="appointment" class="btn">Book Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -175,125 +174,72 @@
 
 
     <!-- Footer Area -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer ">
         <!-- Footer Top -->
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>About Us</h2>
-                            <p>
-                                Lorem ipsum dolor sit am consectetur adipisicing elit do
-                                eiusmod tempor incididunt ut labore dolore magna.
-                            </p>
+                            <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut
+                                labore dolore magna.</p>
                             <!-- Social -->
                             <ul class="social">
-                                <li>
-                                    <a href="#"><i class="icofont-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-vimeo"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-pinterest"></i></a>
-                                </li>
+                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="#"><i class="icofont-google-plus"></i></a></li>
+                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                                <li><a href="#"><i class="icofont-vimeo"></i></a></li>
+                                <li><a href="#"><i class="icofont-pinterest"></i></a></li>
                             </ul>
                             <!-- End Social -->
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-footer f-link">
                             <h2>Quick Links</h2>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
+                                <div class="col-lg-5 col-md-5 col-12">
                                     <ul>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Services</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our
-                                                Cases</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Other Links</a>
-                                        </li>
+                                        <li><a href="about-us"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i>About Us</a></li>
+                                        <li><a href="services"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i>Services</a></li>
+                                        <li><a href="packages"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i>Packages</a></li>
+                                        <li><a href="contac-us"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-12">
+                                <div class="col-lg-7 col-md-7 col-12">
                                     <ul>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Consuling</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Finance</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Testimonials</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>FAQ</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-caret-right"
-                                                    aria-hidden="true"></i>Contact Us</a>
-                                        </li>
+                                        <ul>
+                                            <li><a href="terms-conditions"><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i>Terms&nbsp;Conditions</a></li>
+                                            <li><a href="privacy-policy"><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i>Privacy&nbsp;policy</a></li>
+                                            <li><a href="refund-policy"><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i>Refund&nbsp;policy</a></li>
+                                            <li><a href="help-center"><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i>Help&nbsp;center</a></li>
+                                        </ul>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="single-footer">
                             <h2>Open Hours</h2>
-                            <p>
-                                Lorem ipsum dolor sit ame consectetur adipisicing elit do
-                                eiusmod tempor incididunt.
-                            </p>
+                            <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
                             <ul class="time-sidual">
-                                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+                                <li class="day">Monday - Friday <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
                                 <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div class="single-footer">
-                            <h2>Newsletter</h2>
-                            <p>
-                                subscribe to our newsletter to get allour news in your inbox..
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            </p>
-                            <form action="mail/mail.php" method="get" class="newsletter-inner">
-                                <input name="email" placeholder="Email Address" class="common-input"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                    required="" type="email" />
-                                <button class="button">
-                                    <i class="icofont icofont-paper-plane"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -304,10 +250,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="copyright-content">
-                            <p>
-                                © Copyright 2024 | All Rights Reserved by
-                                <a href="#">Mediplus</a>
-                            </p>
+                            <p>© Copyright 2018 | All Rights Reserved by <a href="#"
+                                    target="_blank">MediPlus</a> </p>
                         </div>
                     </div>
                 </div>
