@@ -84,8 +84,8 @@ class AdminPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->unsavedChangesAlerts()
             ->maxContentWidth(MaxWidth::Full)
-            // ->brandLogo(asset('images/logo.png'))
-            // ->favicon(asset('images/logo.png'))
+            ->brandLogo(asset('assets/img/logo.png'))
+            ->favicon(asset('assets/img/favicon.png'))
             // ->maxContentWidth(MaxWidth::Full)
             // ->sidebarFullyCollapsibleOnDesktop()
         ;

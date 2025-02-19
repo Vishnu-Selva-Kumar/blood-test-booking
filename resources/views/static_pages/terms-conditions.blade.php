@@ -204,7 +204,7 @@
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
-                                        <li><a href="contac-us"><i class="fa fa-caret-right"
+                                        <li><a href="contact-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>

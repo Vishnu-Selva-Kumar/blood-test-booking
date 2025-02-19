@@ -78,7 +78,7 @@ class ServiceResource extends Resource
             ->columns([
                 TextColumn::make('id')->searchable()->sortable(),
                 TextColumn::make('title')->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
             ->filters([

@@ -39,7 +39,7 @@ class CategoryResource extends Resource
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')->label('Name')->required(),
-                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->required(),
                     ])
             ]);
     }
@@ -48,8 +48,8 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
+                TextColumn::make('name')->searchable()->sortable()->width('75%'),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
             ->filters([
@@ -66,7 +66,7 @@ class CategoryResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('id', 'desc'); // Add this line to set default sort order
     }
 
     public static function getRelations(): array

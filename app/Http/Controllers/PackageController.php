@@ -13,7 +13,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        //
+        return view('packages');
     }
 
     /**
@@ -37,7 +37,9 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
+        // return $package;
+
+        return view('package-details',compact('package'));
     }
 
     /**

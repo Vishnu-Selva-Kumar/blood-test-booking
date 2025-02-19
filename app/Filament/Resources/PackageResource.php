@@ -47,10 +47,23 @@ class PackageResource extends Resource
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
-                        Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required(),
-                        FileUpload::make('image')->image()->directory('packages'),
-                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
-                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull(),
+                        Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
+
+                        MarkdownEditor::make('short_description')->toolbarButtons([
+                            'attachFiles',
+                            'blockquote',
+                            'bold',
+                            'bulletList',
+                            'codeBlock',
+                            'heading',
+                            'italic',
+                            'link',
+                            'orderedList',
+                            'redo',
+                            'strike',
+                            'table',
+                            'undo',
+                        ])->label('Short description')->required()->columnSpanFull(),
                         MarkdownEditor::make('description')->toolbarButtons([
                             'attachFiles',
                             'blockquote',
@@ -65,7 +78,10 @@ class PackageResource extends Resource
                             'strike',
                             'table',
                             'undo',
-                        ])->label('Description')->columnSpanFull(),
+                        ])->label('Long Description')->columnSpanFull(),
+
+                        FileUpload::make('image')->image()->directory('packages'),
+                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                     ]),
                 //
             ]);
@@ -78,7 +94,7 @@ class PackageResource extends Resource
                 TextColumn::make('id')->searchable()->sortable(),
                 TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('category.name')->label('Category')->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
             ->filters([

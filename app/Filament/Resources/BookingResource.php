@@ -65,7 +65,7 @@ class BookingResource extends Resource
                 TextColumn::make('email')->searchable()->sortable(),
                 TextColumn::make('phone_number')->searchable()->sortable(),
                 TextColumn::make('appointment_at')->dateTime()->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status'))))->sortable(),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status'))))->sortable()->width('15%'),
 
                 //
             ])

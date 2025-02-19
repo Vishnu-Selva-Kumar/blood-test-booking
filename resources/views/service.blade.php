@@ -394,37 +394,6 @@
     </section>
     <!--/End Appointment -->
 
-    <!-- Start Newsletter Area -->
-    <section class="newsletter section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-12">
-                    <!-- Start Newsletter Form -->
-                    <div class="subscribe-text">
-                        <h6>Sign up for newsletter</h6>
-                        <p class="">
-                            Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,<br />
-                            homero alterum.
-                        </p>
-                    </div>
-                    <!-- End Newsletter Form -->
-                </div>
-                <div class="col-lg-6 col-12">
-                    <!-- Start Newsletter Form -->
-                    <div class="subscribe-form">
-                        <form action="mail/mail.php" method="get" class="newsletter-inner">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-                                required="" type="email" />
-                            <button class="btn">Subscribe</button>
-                        </form>
-                    </div>
-                    <!-- End Newsletter Form -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /End Newsletter Area -->
 
     <!-- Footer Area -->
     <footer id="footer" class="footer ">
@@ -460,7 +429,7 @@
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
-                                        <li><a href="contac-us"><i class="fa fa-caret-right"
+                                        <li><a href="contact-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>
