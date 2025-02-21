@@ -119,9 +119,9 @@
                                 <nav class="navigation">
                                     <ul class="nav menu">
                                         <li class="active"><a href="">Home </a></li>
-                                        <li><a href="service">Services </a></li>
-                                        <li><a href="packages">Packages </a></li>
-                                        <li><a href="contact-us">Contact Us</a></li>
+                                        <li><a href="/service">Services </a></li>
+                                        <li><a href="/packages">Packages </a></li>
+                                        <li><a href="/contact-us">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -348,22 +348,22 @@
                                                     aria-hidden="true"></i>About Us</a></li>
                                         <li><a href="services"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Services</a></li>
-                                        <li><a href="packages"><i class="fa fa-caret-right"
+                                        <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
-                                        <li><a href="contact-us"><i class="fa fa-caret-right"
+                                        <li><a href="/contact-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-12">
                                     <ul>
                                         <ul>
-                                            <li><a href="terms-conditions"><i class="fa fa-caret-right"
+                                            <li><a href="/terms-conditions"><i class="fa fa-caret-right"
                                                         aria-hidden="true"></i>Terms&nbsp;Conditions</a></li>
-                                            <li><a href="privacy-policy"><i class="fa fa-caret-right"
+                                            <li><a href="/privacy-policy"><i class="fa fa-caret-right"
                                                         aria-hidden="true"></i>Privacy&nbsp;policy</a></li>
-                                            <li><a href="refund-policy"><i class="fa fa-caret-right"
+                                            <li><a href="/refund-policy"><i class="fa fa-caret-right"
                                                         aria-hidden="true"></i>Refund&nbsp;policy</a></li>
-                                            <li><a href="help-center"><i class="fa fa-caret-right"
+                                            <li><a href="/help-center"><i class="fa fa-caret-right"
                                                         aria-hidden="true"></i>Help&nbsp;center</a></li>
                                         </ul>
                                     </ul>
