@@ -38,6 +38,10 @@ class PackageController extends Controller
     public function show(Package $package)
     {
         // return $package;
+        /**
+         * <img src="{{ asset('storage/' . $package->image) }}" alt="">
+         * {!! str($package->short_description)->markdown()->sanitizeHtml() !!}
+         */
 
         return view('package-details',compact('package'));
     }
