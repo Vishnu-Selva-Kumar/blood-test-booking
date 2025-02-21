@@ -13,7 +13,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('packages');
+        $packages = Package::all();
+        return view('packages', compact('packages'));
     }
 
     /**
@@ -35,13 +36,10 @@ class PackageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Package $package)
+    public function show(String $slug)
     {
-        // return $package;
-        /**
-         * <img src="{{ asset('storage/' . $package->image) }}" alt="">
-         * {!! str($package->short_description)->markdown()->sanitizeHtml() !!}
-         */
+
+        $package = Package::where('slug', $slug)->firstOrFail();
 
         return view('package-details', compact('package'));
     }

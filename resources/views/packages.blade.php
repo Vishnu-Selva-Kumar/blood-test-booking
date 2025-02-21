@@ -67,32 +67,7 @@
     </div>
     <!-- End Preloader -->
 
-    <!-- Mediplus Color Plate -->
-    <div class="color-plate">
-        <a class="color-plate-icon"><i class="fa fa-cog fa-spin"></i></a>
-        <h4>Mediplus</h4>
-        <p>Here is some awesome color's available on Mediplus Template.</p>
-        <span class="color1"></span>
-        <span class="color2"></span>
-        <span class="color3"></span>
-        <span class="color4"></span>
-        <span class="color5"></span>
-        <span class="color6"></span>
-        <span class="color7"></span>
-        <span class="color8"></span>
-        <span class="color9"></span>
-        <span class="color10"></span>
-        <span class="color11"></span>
-        <span class="color12"></span>
-        <div class="rtl-version">
-            <h4>RTL Version</h4>
-            <ul class="option-box">
-                <li class="rtl-btn">RTL Version</li>
-                <li class="ltr-btn active">LTR Version</li>
-            </ul>
-        </div>
-    </div>
-    <!-- /End Color Plate -->
+
     <!-- Header Area -->
     <header class="header">
         <!-- Topbar -->
@@ -284,17 +259,19 @@
 
                 <div class="col-lg-9 col-12">
                     <div class="row">
+                        @foreach ( $packages as $package )
+
                         <div class="col-lg-4 col-md-4 col-12">
                             <!-- Single Blog -->
                             <div class="single-news">
                                 <div class="news-head">
-                                    <img src="assets/img/blog1.jpg" alt="#" />
+                                    <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
                                 </div>
                                 <div class="news-body">
                                     <div class="news-content">
                                         <div class="date">22 Aug, 2020</div>
                                         <h2>
-                                            <a href="package-detail">We have annnocuced our new product.</a>
+                                            <a href="{{ route('web.packages.show',['slug' =>$package->slug ]) }}">{{ $package->title ?? '' }}</a>
                                         </h2>
                                         <p class="text">
                                             Lorem ipsum dolor a sit ameti, consectetur adipisicing
@@ -306,116 +283,9 @@
                             </div>
                             <!-- End Single Blog -->
                         </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="assets/img/blog2.jpg" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">15 Jul, 2020</div>
-                                        <h2>
-                                            <a href="package-detail">Top five way for solving teeth problems.</a>
-                                        </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Blog -->
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="assets/img/blog3.jpg" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">05 Jan, 2020</div>
-                                        <h2>
-                                            <a href="package-detail">We provide highly business soliutions.</a>
-                                        </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Blog -->
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="assets/img/blog3.jpg" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">05 Jan, 2020</div>
-                                        <h2>
-                                            <a href="package-detail">We provide highly business soliutions.</a>
-                                        </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Blog -->
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="assets/img/blog1.jpg" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">22 Aug, 2020</div>
-                                        <h2>
-                                            <a href="package-detail">We have annnocuced our new product.</a>
-                                        </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Blog -->
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="assets/img/blog2.jpg" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">15 Jul, 2020</div>
-                                        <h2>
-                                            <a href="package-detail">Top five way for solving teeth problems.</a>
-                                        </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Blog -->
-                        </div>
+
+                        @endforeach
+
                         <div class="col-12">
                             <!-- Pagination -->
                             <div class="pagination">

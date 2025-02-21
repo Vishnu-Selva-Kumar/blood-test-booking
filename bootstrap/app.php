@@ -25,22 +25,23 @@ return Application::configure(basePath: dirname(__DIR__))
             // if ($request->is(['admin', 'admin/*'])) {
             if (true) {
 
-                if ($exception->getStatusCode() == 400) {
-                    return response()->view("errors.404", [], 400);
-                }
-                if ($exception->getStatusCode() == 403) {
-                    return response()->view("errors.404", [], 403);
-                }
+                // if ($exception->getStatusCode() == 400) {
+                //     return response()->view("errors.404", [], 400);
+                // }
+                // if ($exception->getStatusCode() == 403) {
+                //     return response()->view("errors.404", [], 403);
+                // }
+
                 if ($exception->getStatusCode() == 404) {
                     return response()->view("errors.404", [], 404);
                 }
 
-                if ($exception->getStatusCode() == 500) {
-                    return response()->view("errors.404", [], 500);
-                }
-                if ($exception->getStatusCode() == 503) {
-                    return response()->view("errors.404", [], 503);
-                }
+                // if ($exception->getStatusCode() == 500) {
+                //     return response()->view("errors.404", [], 500);
+                // }
+                // if ($exception->getStatusCode() == 503) {
+                //     return response()->view("errors.404", [], 503);
+                // }
             }
 
             if ($exception->getStatusCode() == 404) {
