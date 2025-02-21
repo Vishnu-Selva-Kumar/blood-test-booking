@@ -269,15 +269,12 @@
                                 </div>
                                 <div class="news-body">
                                     <div class="news-content">
-                                        <div class="date">22 Aug, 2020</div>
+
                                         <h2>
                                             <a href="{{ route('web.packages.show',['slug' =>$package->slug ]) }}">{{ $package->title ?? '' }}</a>
                                         </h2>
-                                        <p class="text">
-                                            Lorem ipsum dolor a sit ameti, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt sed do incididunt
-                                            sed.
-                                        </p>
+                                        <p class="text">{{ $package->short_description ?? '' }}</p>
+                                        <a href="{{ route('web.packages.show',['slug' =>$package->slug ]) }}" class="date">Book Now</a>
                                     </div>
                                 </div>
                             </div>

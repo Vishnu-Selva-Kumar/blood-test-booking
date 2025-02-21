@@ -192,94 +192,32 @@
                             </div>
 
                             <div class="doctor-details-biography">
-                                {!! str($package->short_description)->markdown()->sanitizeHtml() !!}
-
+                                {!! str($package->description)->markdown()->sanitizeHtml() !!}
                             </div>
 
                             <div class="doctor-details-biography">
                                 <h3>{{ $package->title ?? '' }} Test List</h3>
                                 <div class="faq-item">
                                     <ul class="accordion">
-                                        <li class="wow " data-wow-delay=".3s">
-                                            <a>What type of toothbrush and toothpaste should I use?</a>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Nisi quis modi ullam amet debitis libero veritatis enim
-                                                repellat optio natus eum delectus deserunt, odit expedita
-                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
-                                                aliquam repellendus similique iure fuga aspernatur amet
-                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
-                                                excepturi! Illum, ut?
-                                            </p>
-                                        </li>
-
-                                        <li class="wow " data-wow-delay=".4s">
-                                            <a>Do I really need to floss?</a>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Nisi quis modi ullam amet debitis libero veritatis enim
-                                                repellat optio natus eum delectus deserunt, odit expedita
-                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
-                                                aliquam repellendus similique iure fuga aspernatur amet
-                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
-                                                excepturi! Illum, ut?
-                                            </p>
-                                        </li>
-
-                                        <li class="wow " data-wow-delay=".5s">
-                                            <a>What are early signs of dental trouble?</a>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Nisi quis modi ullam amet debitis libero veritatis enim
-                                                repellat optio natus eum delectus deserunt, odit expedita
-                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
-                                                aliquam repellendus similique iure fuga aspernatur amet
-                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
-                                                excepturi! Illum, ut?
-                                            </p>
-                                        </li>
-
-                                        <li class="wow " data-wow-delay=".6s">
-                                            <a>Why do I need dental test?</a>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Nisi quis modi ullam amet debitis libero veritatis enim
-                                                repellat optio natus eum delectus deserunt, odit expedita
-                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
-                                                aliquam repellendus similique iure fuga aspernatur amet
-                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
-                                                excepturi! Illum, ut?
-                                            </p>
-                                        </li>
-                                        <li class="wow " data-wow-delay=".7s">
-                                            <a>How do fillings work?</a>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Nisi quis modi ullam amet debitis libero veritatis enim
-                                                repellat optio natus eum delectus deserunt, odit expedita
-                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
-                                                aliquam repellendus similique iure fuga aspernatur amet
-                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
-                                                excepturi! Illum, ut?
-                                            </p>
-                                        </li>
+                                        @foreach ($package->testLists as $test)
+                                            <li class="wow" data-wow-delay=".3s">
+                                                <a>{{ $test->title ?? '' }}</a>
+                                                <div style="padding: 15px">
+                                                    {!! str($test->description)->markdown()->sanitizeHtml() !!}
+                                                </div>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
-
                             </div>
 
                             <div class="doctor-details-biography">
                                 <h3>Process</h3>
                                 <div style="padding: 15px">
-                                    {!! str($package->description)->markdown()->sanitizeHtml() !!}
+                                    {!! str($package->process)->markdown()->sanitizeHtml() !!}
                                 </div>
-
                             </div>
+
                         </div>
                     </div>
                 </div>

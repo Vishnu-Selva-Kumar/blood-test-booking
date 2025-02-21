@@ -207,10 +207,10 @@ Version:	1.1
         /*===================
             Accordion JS
         =====================*/
-        $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
+        // $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
         $('.accordion a').on('click', function (j) {
-            var dropDown = $(this).closest('li').find('p');
-            $(this).closest('.accordion').find('p').not(dropDown).slideUp(300);
+            var dropDown = $(this).closest('li').find('div');
+            $(this).closest('.accordion').find('div').not(dropDown).slideUp(300);
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
             } else {

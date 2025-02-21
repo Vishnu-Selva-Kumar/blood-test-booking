@@ -4176,3 +4176,9 @@ body{
 .breadcrumbs {
 	padding: 40px 0px;
 }
+
+.blog .single-news .news-body .date {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0px;
+}

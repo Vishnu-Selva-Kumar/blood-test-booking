@@ -26,6 +26,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Support\Enums\ActionSize;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use Filament\Forms\Components\Repeater;
+
 
 
 class PackageResource extends Resource
@@ -50,11 +52,18 @@ class PackageResource extends Resource
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
-                        TinyEditor::make('short_description')->columnSpanFull()->label('Short description')->required(),
-                        TinyEditor::make('description')->columnSpanFull()->label('Process')->required(),
-
+                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull()->rows(5),
+                        TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+                        TinyEditor::make('process')->columnSpanFull()->label('Process')->required(),
                         FileUpload::make('image')->image()->directory('packages'),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                        Repeater::make('testLists')->relationship()->label('Test Lists')
+                            ->schema([
+                                TextInput::make('title')->label('Title')->required(),
+                                TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+                            ])->columnSpanFull()
+
+
                     ]),
                 //
             ]);
