@@ -54,6 +54,19 @@
     h6 {
         color: #1a76d1;
     }
+
+
+    .doctor-details-item .doctor-details-contact {
+        padding: 20px;
+    }
+
+    .doctor-details-item .doctor-details-contact h3 {
+        margin-bottom: 10px;
+    }
+
+    .appointment .form textarea {
+        height: 125px;
+    }
 </style>
 
 <body>
@@ -152,11 +165,11 @@
             <div class="bread-inner">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Doctor Details</h2>
+                        <h2>{{ $package->title ?? '' }}</h2>
                         <ul class="bread-list">
                             <li><a href="index.html">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Doctor Details</li>
+                            <li class="active">{{ $package->title ?? '' }}</li>
                         </ul>
                     </div>
                 </div>
@@ -166,65 +179,106 @@
     <!-- End Breadcrumbs -->
 
     <!-- Doctor Details -->
-    <div class="doctor-details-area section">
+    <div class="doctor-details-area section appointment">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="doctor-details-item">
-                        <div class="doctor-details-right">
+                        <div class="doctor-details-right-removed">
                             <div class="doctor-name">
-                                <h2 class="name">{{ $package->title ?? '' }}</h2>
+                                {{-- <h2 class="name">{{ $package->title ?? '' }}</h2> --}}
                                 {{-- <p class="deg">Neurosurgeon.</p> --}}
                                 {{-- <p class="degree">MBBS in Neurology, PHD in Neurosurgeon.</p> --}}
                             </div>
 
                             <div class="doctor-details-biography">
                                 {!! str($package->short_description)->markdown()->sanitizeHtml() !!}
+
                             </div>
 
                             <div class="doctor-details-biography">
-                                <h3>Education</h3>
-                                <ul>
-                                    <li>
-                                        PHD degree in Neorology at University of Mediserv (2006)
-                                    </li>
-                                    <li>
-                                        Master of Neoro Surgery at University of Mediserv (2002)
-                                    </li>
-                                    <li>
-                                        MBBS degree in Neurosciences at University of Mediserv
-                                        (2002)
-                                    </li>
-                                    <li>
-                                        Higher Secondary Certificate at Mediserv collage (1991)
-                                    </li>
-                                </ul>
+                                <h3>{{ $package->title ?? '' }} Test List</h3>
+                                <div class="faq-item">
+                                    <ul class="accordion">
+                                        <li class="wow " data-wow-delay=".3s">
+                                            <a>What type of toothbrush and toothpaste should I use?</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Nisi quis modi ullam amet debitis libero veritatis enim
+                                                repellat optio natus eum delectus deserunt, odit expedita
+                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
+                                                aliquam repellendus similique iure fuga aspernatur amet
+                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
+                                                excepturi! Illum, ut?
+                                            </p>
+                                        </li>
+
+                                        <li class="wow " data-wow-delay=".4s">
+                                            <a>Do I really need to floss?</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Nisi quis modi ullam amet debitis libero veritatis enim
+                                                repellat optio natus eum delectus deserunt, odit expedita
+                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
+                                                aliquam repellendus similique iure fuga aspernatur amet
+                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
+                                                excepturi! Illum, ut?
+                                            </p>
+                                        </li>
+
+                                        <li class="wow " data-wow-delay=".5s">
+                                            <a>What are early signs of dental trouble?</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Nisi quis modi ullam amet debitis libero veritatis enim
+                                                repellat optio natus eum delectus deserunt, odit expedita
+                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
+                                                aliquam repellendus similique iure fuga aspernatur amet
+                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
+                                                excepturi! Illum, ut?
+                                            </p>
+                                        </li>
+
+                                        <li class="wow " data-wow-delay=".6s">
+                                            <a>Why do I need dental test?</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Nisi quis modi ullam amet debitis libero veritatis enim
+                                                repellat optio natus eum delectus deserunt, odit expedita
+                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
+                                                aliquam repellendus similique iure fuga aspernatur amet
+                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
+                                                excepturi! Illum, ut?
+                                            </p>
+                                        </li>
+                                        <li class="wow " data-wow-delay=".7s">
+                                            <a>How do fillings work?</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Nisi quis modi ullam amet debitis libero veritatis enim
+                                                repellat optio natus eum delectus deserunt, odit expedita
+                                                eos molestiae ipsa totam quidem? Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Vel, quos mollitia voluptatum
+                                                aliquam repellendus similique iure fuga aspernatur amet
+                                                odit! At vitae dicta excepturi quasi? Veritatis, pariatur
+                                                excepturi! Illum, ut?
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
 
                             <div class="doctor-details-biography">
-                                <h3>Biography</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                                    commodo viverra
-                                </p>
-                                <br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                                    commodo viverra
-                                </p>
-                                <br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                                    commodo viverra eiusmod tempor incididunt ut labore et
-                                    dolore magna.
-                                </p>
+                                <h3>Process</h3>
+                                <div style="padding: 15px">
+                                    {!! str($package->description)->markdown()->sanitizeHtml() !!}
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -234,56 +288,74 @@
                     <div class="doctor-details-item doctor-details-left">
                         <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
                         <div class="doctor-details-contact">
-                            <h3>Contact info</h3>
-                            <ul class="basic-info">
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    Call : +07 554 332 322
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-message"></i>
-                                    hello@medsev.com
-                                </li>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    4th Floor, 408 No Chamber
-                                </li>
-                            </ul>
-                            <!-- Social -->
-                            <ul class="social">
-                                <li>
-                                    <a href="#"><i class="icofont-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-vimeo"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icofont-pinterest"></i></a>
-                                </li>
-                            </ul>
-                            <!-- End Social -->
-                            <div class="doctor-details-work">
-                                <h3>Working hours</h3>
-                                <ul class="time-sidual">
-                                    <li class="day">
-                                        Monday - Fridayp <span>8.00-20.00</span>
-                                    </li>
-                                    <li class="day">Saturday <span>9.00-18.30</span></li>
-                                    <li class="day">
-                                        Monday - Thusday <span>9.00-15.00</span>
-                                    </li>
-                                    <li class="day">
-                                        Monday - Fridayp <span>8.00-20.00</span>
-                                    </li>
-                                </ul>
+                            <div class="appointment-inner">
+                                <div class="title">
+                                    <h3>Book your appointment, Pay Later</h3>
+                                    <small>You will get a payment link in 2 hours. You can make the payment online or
+                                        pay cash to the technician. </small>
+                                </div>
+                                <form class="form" action="{{ route('web.packages.store') }}" method="post">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Appointment Date"
+                                                    id="datepicker" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <div class="nice-select form-control wide" tabindex="0">
+                                                    <span class="current">Select Number of persons</span>
+                                                    <ul class="list">
+                                                        <li data-value="1" class="option selected">
+                                                            Number of persons (1)
+                                                        </li>
+                                                        <li data-value="2" class="option">2</li>
+                                                        <li data-value="3" class="option">3</li>
+                                                        <li data-value="4" class="option">4</li>
+                                                        <li data-value="5" class="option">5 or above</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <input name="name" type="text" placeholder="Full Name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <input name="email" type="email" placeholder="Email ID" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <input name="phone" type="text" placeholder="Mobile number" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <textarea name="address" placeholder="Write Your address Here....."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="button">
+                                                    <button type="submit" class="btn">
+                                                        Book An Appointment
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
 

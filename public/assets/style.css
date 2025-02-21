@@ -4170,3 +4170,9 @@ body{
 /*=========================
 	End Footer CSS
 ===========================*/
+
+/***** project customization   */
+
+.breadcrumbs {
+	padding: 40px 0px;
+}

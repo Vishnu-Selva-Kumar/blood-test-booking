@@ -11,7 +11,7 @@ Route::name('web.')->group(function () {
 
     Route::view('/', 'home')->name('home');
     Route::view('/index.html', 'home')->name('home.index');
-    Route::resource('packages', PackageController::class)->names('packages')->only('index', 'show');
+    Route::resource('packages', PackageController::class)->names('packages')->only('index', 'show','store');
     Route::view('/site-map', 'site_map')->name('site-map');
 
     // no need to create a controller for these pages

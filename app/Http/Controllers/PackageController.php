@@ -29,7 +29,7 @@ class PackageController extends Controller
      */
     public function store(StorePackageRequest $request)
     {
-        //
+        return $request->all();
     }
 
     /**
@@ -43,7 +43,7 @@ class PackageController extends Controller
          * {!! str($package->short_description)->markdown()->sanitizeHtml() !!}
          */
 
-        return view('package-details',compact('package'));
+        return view('package-details', compact('package'));
     }
 
     /**

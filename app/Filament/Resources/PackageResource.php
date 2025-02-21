@@ -25,6 +25,8 @@ use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Support\Enums\ActionSize;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+
 
 class PackageResource extends Resource
 {
@@ -48,37 +50,8 @@ class PackageResource extends Resource
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
-
-                        MarkdownEditor::make('short_description')->toolbarButtons([
-                            'attachFiles',
-                            'blockquote',
-                            'bold',
-                            'bulletList',
-                            'codeBlock',
-                            'heading',
-                            'italic',
-                            'link',
-                            'orderedList',
-                            'redo',
-                            'strike',
-                            'table',
-                            'undo',
-                        ])->label('Short description')->required()->columnSpanFull(),
-                        MarkdownEditor::make('description')->toolbarButtons([
-                            'attachFiles',
-                            'blockquote',
-                            'bold',
-                            'bulletList',
-                            'codeBlock',
-                            'heading',
-                            'italic',
-                            'link',
-                            'orderedList',
-                            'redo',
-                            'strike',
-                            'table',
-                            'undo',
-                        ])->label('Long Description')->columnSpanFull(),
+                        TinyEditor::make('short_description')->columnSpanFull()->label('Short description')->required(),
+                        TinyEditor::make('description')->columnSpanFull()->label('Process')->required(),
 
                         FileUpload::make('image')->image()->directory('packages'),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
