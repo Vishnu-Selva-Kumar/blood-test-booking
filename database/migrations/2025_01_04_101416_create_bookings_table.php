@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone_number');
-            $table->text('address');
-            $table->integer('age');
-            $table->dateTime('appointment_at');
+            $table->text('address')->nullable();
+            $table->integer('age')->nullable();
+            $table->dateTime('appointment_at')->nullable();
+            $table->integer('number_of_persons')->default(1);
             $table->integer('status')->default(config('web.constants.booking_status.new'));
             $table->timestamps();
         });

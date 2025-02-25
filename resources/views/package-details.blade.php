@@ -67,6 +67,13 @@
     .appointment .form textarea {
         height: 125px;
     }
+
+    .doctor-details-biography h3 {
+        border: 1px solid #8080809c !important;
+        padding: 12px !important;
+        background: #8080809c !important;
+        color: white !important;
+    }
 </style>
 
 <body>
@@ -182,6 +189,7 @@
     <div class="doctor-details-area section appointment">
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-7">
                     <div class="doctor-details-item">
                         <div class="doctor-details-right-removed">
@@ -197,11 +205,13 @@
 
                             <div class="doctor-details-biography">
                                 <h3>{{ $package->title ?? '' }} Test List</h3>
+
                                 <div class="faq-item">
                                     <ul class="accordion">
                                         @foreach ($package->testLists as $test)
-                                            <li class="wow" data-wow-delay=".3s">
-                                                <a>{{ $test->title ?? '' }}</a>
+                                            <li class="fadeInUp " data-wow-delay=".3s">
+                                                <a
+                                                    class="{{ $loop->index == 0 ? 'active' : '' }}">{{ $test->title ?? '' }}</a>
                                                 <div style="padding: 15px">
                                                     {!! str($test->description)->markdown()->sanitizeHtml() !!}
                                                 </div>
@@ -217,12 +227,20 @@
                                     {!! str($package->process)->markdown()->sanitizeHtml() !!}
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-5">
+                    @foreach (['success', 'error', 'warning'] as $msg)
+                        @if (session($msg))
+                            <div class="alert alert-{{ $msg }} alert-dismissible fade show" role="alert">
+                                {{ session($msg) }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+                    @endforeach
                     <div class="doctor-details-item doctor-details-left">
                         <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
                         <div class="doctor-details-contact">
@@ -232,19 +250,21 @@
                                     <small>You will get a payment link in 2 hours. You can make the payment online or
                                         pay cash to the technician. </small>
                                 </div>
+
                                 <form class="form" action="{{ route('web.packages.store') }}" method="post">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Appointment Date"
-                                                    id="datepicker" />
+                                                <input type="text" name="appointment_at" required
+                                                    placeholder="Appointment Date" id="datepicker" />
                                             </div>
                                         </div>
 
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <div class="nice-select form-control wide" tabindex="0">
+                                                    <input type="hidden" name="number_of_persons" value="">
                                                     <span class="current">Select Number of persons</span>
                                                     <ul class="list">
                                                         <li data-value="1" class="option selected">
@@ -260,22 +280,25 @@
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="name" type="text" placeholder="Full Name" />
+                                                <input name="name" id="name" type="text" required
+                                                    placeholder="Full Name" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="email" type="email" placeholder="Email ID" />
+                                                <input name="email" id="email" type="email"
+                                                    placeholder="Email ID" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="phone" type="text" placeholder="Mobile number" />
+                                                <input name="phone_number" id="phone_number" type="text" required
+                                                    placeholder="Mobile number" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <textarea name="address" placeholder="Write Your address Here....."></textarea>
+                                                <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -291,6 +314,8 @@
                                         </div>
                                     </div>
                                 </form>
+
+
                             </div>
                         </div>
 

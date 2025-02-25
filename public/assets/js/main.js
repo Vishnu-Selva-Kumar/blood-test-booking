@@ -207,7 +207,7 @@ Version:	1.1
         /*===================
             Accordion JS
         =====================*/
-        // $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
+        $('.accordion > li:not(:eq(0)) a').next().slideUp();
         $('.accordion a').on('click', function (j) {
             var dropDown = $(this).closest('li').find('div');
             $(this).closest('.accordion').find('div').not(dropDown).slideUp(300);

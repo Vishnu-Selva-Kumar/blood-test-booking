@@ -4182,3 +4182,12 @@ body{
     text-align: center;
     margin: 15px 0px;
 }
+
+
+.appointment .form input[type="email"] {
+    text-transform: lowercase !important;
+}
+
+input[type="email"]::placeholder {
+    text-transform: capitalize !important;
+}

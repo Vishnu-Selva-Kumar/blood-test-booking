@@ -49,7 +49,7 @@
 
     <link rel="stylesheet" id="colors" />
     <style>
-        .single-news > .news-body > .news-content > p {
+        .single-news>.news-body>.news-content>p {
             min-height: 130px;
         }
     </style>
@@ -172,91 +172,55 @@
 
                 <div class="col-lg-3 col-12">
                     <div class="main-sidebar">
-                        <!-- Single Widget -->
-                        <div class="single-widget search" style="padding: 10px">
-                            <div class="form">
-                                <input type="email" placeholder="Search Here..." />
+                        @if (false)
+                            <!-- Single Widget -->
+                            <div class="single-widget search" style="padding: 10px">
+                                <div class="form">
+                                    <input type="email" placeholder="Search Here..." />
+                                </div>
                             </div>
-                        </div>
-                        <!--/ End Single Widget -->
+                            <!--/ End Single Widget -->
+                        @endif
+
                         <!-- Single Widget -->
                         <div class="single-widget category" style="padding: 15px">
                             <h3 class="title">Categories</h3>
                             <ul class="categor-list">
-                                <li><a href="#">Men's Apparel</a></li>
-                                <li><a href="#">Women's Apparel</a></li>
-                                <li><a href="#">Bags Collection</a></li>
-                                <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Sun Glasses</a></li>
+                                @foreach ($categories as $category)
+                                    <li><a href="#">{{ $category->name ?? '' }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <!--/ End Single Widget -->
-                        <!-- Single Widget -->
-                        <div class="single-widget recent-post" style="padding: 15px">
-                            <h3 class="title">Latest Packages</h3>
-                            <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="assets/img/blog-sidebar1.jpg" alt="#" />
+
+                        @if (false)
+                            <!-- Single Widget -->
+                            <div class="single-widget recent-post" style="padding: 15px">
+                                <h3 class="title">Latest Packages</h3>
+                                <!-- Single Post -->
+                                <div class="single-post">
+                                    <div class="image">
+                                        <img src="assets/img/blog-sidebar1.jpg" alt="#" />
+                                    </div>
+                                    <div class="content">
+                                        <h5><a href="#">We have annnocuced our new product.</a></h5>
+                                        <ul class="comment">
+                                            <li>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>Jan 11,
+                                                2020
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-commenting-o" aria-hidden="true"></i>35
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h5><a href="#">We have annnocuced our new product.</a></h5>
-                                    <ul class="comment">
-                                        <li>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>Jan 11,
-                                            2020
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-commenting-o" aria-hidden="true"></i>35
-                                        </li>
-                                    </ul>
-                                </div>
+                                <!-- End Single Post -->
                             </div>
-                            <!-- End Single Post -->
-                            <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="assets/img/blog-sidebar2.jpg" alt="#" />
-                                </div>
-                                <div class="content">
-                                    <h5>
-                                        <a href="#">Top five way for solving teeth problems.</a>
-                                    </h5>
-                                    <ul class="comment">
-                                        <li>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>Mar 05,
-                                            2019
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-commenting-o" aria-hidden="true"></i>59
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End Single Post -->
-                            <!-- Single Post -->
-                            <div class="single-post">
-                                <div class="image">
-                                    <img src="assets/img/blog-sidebar3.jpg" alt="#" />
-                                </div>
-                                <div class="content">
-                                    <h5>
-                                        <a href="#">We provide highly business soliutions.</a>
-                                    </h5>
-                                    <ul class="comment">
-                                        <li>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>June
-                                            09, 2019
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-commenting-o" aria-hidden="true"></i>44
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End Single Post -->
-                        </div>
-                        <!--/ End Single Widget -->
+                            <!--/ End Single Widget -->
+                        @endif
+
+
 
                     </div>
                 </div>
@@ -289,21 +253,10 @@
                         @endforeach
 
                         <div class="col-12">
-                            <!-- Pagination -->
-                            <div class="pagination">
-                                <ul class="pagination-list">
-                                    <li>
-                                        <a href="#"><i class="icofont-rounded-left"></i></a>
-                                    </li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li>
-                                        <a href="#"><i class="icofont-rounded-right"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--/ End Pagination -->
+
+                            {!! $packages->withQueryString()->links('pagination::custom') !!}
+
+
                         </div>
                     </div>
                 </div>

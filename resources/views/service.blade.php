@@ -281,68 +281,60 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-12">
-                    <form class="form" action="#">
+                <div class="col-lg-8 col-md-12 col-12">
+
+                    <form class="form" action="{{ route('web.packages.store') }}" method="post">
+                        @csrf
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <input name="name" type="text" placeholder="Name" />
+                                    <input type="text" name="appointment_at" placeholder="Appointment Date" required
+                                        id="datepicker" />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="email" type="email" placeholder="Email" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="phone" type="text" placeholder="Phone" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
+
+                            <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <div class="nice-select form-control wide" tabindex="0">
-                                        <span class="current">Department</span>
+                                        <input type="hidden" name="number_of_persons" value="">
+                                        <span class="current">Number of persons</span>
                                         <ul class="list">
                                             <li data-value="1" class="option selected">
-                                                Department
+                                                Number of persons (1)
                                             </li>
-                                            <li data-value="2" class="option">Cardiac Clinic</li>
-                                            <li data-value="3" class="option">Neurology</li>
-                                            <li data-value="4" class="option">Dentistry</li>
-                                            <li data-value="5" class="option">Gastroenterology</li>
+                                            <li data-value="2" class="option">2</li>
+                                            <li data-value="3" class="option">3</li>
+                                            <li data-value="4" class="option">4</li>
+                                            <li data-value="5" class="option">5 or above</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="form-group">
-                                    <div class="nice-select form-control wide" tabindex="0">
-                                        <span class="current">Doctor</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected">Doctor</li>
-                                            <li data-value="2" class="option">
-                                                Dr. Akther Hossain
-                                            </li>
-                                            <li data-value="3" class="option">Dr. Dery Alex</li>
-                                            <li data-value="4" class="option">Dr. Jovis Karon</li>
-                                        </ul>
-                                    </div>
+                                    <input name="name" id="name" type="text" required
+                                        placeholder="Full Name" />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Date" id="datepicker" />
+                                    <input name="email" id="email" type="email" placeholder="Email ID" />
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Write Your Message Here....."></textarea>
+                                    <input name="phone_number" id="phone_number" type="text" required
+                                        placeholder="Mobile number" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-5">
+                            <div class="col-12">
                                 <div class="form-group">
                                     <div class="button">
                                         <button type="submit" class="btn">
@@ -351,13 +343,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7">
-                                <p>( We will be confirm by an Text Message )</p>
-                            </div>
                         </div>
                     </form>
+
+
                 </div>
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-4 col-md-12">
                     <div class="appointment-image">
                         <img src="assets/img/contact-img.png" alt="#" />
                     </div>
