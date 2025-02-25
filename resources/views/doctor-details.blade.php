@@ -214,7 +214,7 @@
                     </li>
                     <li class="day">Saturday <span>9.00-18.30</span></li>
                     <li class="day">
-                      Monday - Thusday <span>9.00-15.00</span>
+                      Sunday <span>9.00-15.00</span>
                     </li>
                     <li class="day">
                       Monday - Fridayp <span>8.00-20.00</span>
@@ -362,7 +362,7 @@
                             <ul class="time-sidual">
                                 <li class="day">Monday - Friday <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
-                                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                                <li class="day">Sunday <span>9.00-15.00</span></li>
                             </ul>
                         </div>
                     </div>

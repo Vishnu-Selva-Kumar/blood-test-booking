@@ -1,16 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
-  <head>
+
+<head>
     <!-- Meta Tag -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="copyright" content="pavilan" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Title -->
     <title>Mediplus - Medical and Doctor HTML Template.</title>
@@ -20,9 +17,8 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -49,226 +45,227 @@
     <!-- Color CSS -->
     <link rel="stylesheet" href="assets/css/color/color1.css" />
     <link rel="stylesheet" id="colors" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Preloader -->
     <div class="preloader">
-      <div class="loader">
-        <div class="loader-outter"></div>
-        <div class="loader-inner"></div>
+        <div class="loader">
+            <div class="loader-outter"></div>
+            <div class="loader-inner"></div>
 
-        <div class="indicator">
-          <svg width="16px" height="12px">
-            <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-            <polyline
-              id="front"
-              points="1 6 4 6 6 11 10 1 12 6 15 6"
-            ></polyline>
-          </svg>
+            <div class="indicator">
+                <svg width="16px" height="12px">
+                    <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                </svg>
+            </div>
         </div>
-      </div>
     </div>
     <!-- End Preloader -->
 
 
 
     <!-- Header Area -->
-		<header class="header" >
-			<!-- Topbar -->
-			<div class="topbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-5 col-12">
-							<!-- Contact -->
-							<!-- <ul class="top-link">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Doctors</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">FAQ</a></li>
-							</ul>  -->
-							<!-- End Contact -->
-						</div>
-						<div class="col-lg-6 col-md-7 col-12">
-							<!-- Top Contact -->
-							<ul class="top-contact">
-								<li><i class="fa fa-phone"></i>+880 1234 56789</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
-							</ul>
-							<!-- End Top Contact -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Topbar -->
-			<!-- Header Inner -->
-			<div class="header-inner">
-				<div class="container">
-					<div class="inner">
-						<div class="row">
-							<div class="col-lg-3 col-md-3 col-12">
-								<!-- Start Logo -->
-								<div class="logo">
-									<a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
-								</div>
-								<!-- End Logo -->
-								<!-- Mobile Nav -->
-								<div class="mobile-nav"></div>
-								<!-- End Mobile Nav -->
-							</div>
+    <header class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5 col-12">
+                        <!-- Contact -->
+                        <!-- <ul class="top-link">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Doctors</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+       </ul>  -->
+                        <!-- End Contact -->
+                    </div>
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <!-- Top Contact -->
+                        <ul class="top-contact">
+                            <li><i class="fa fa-phone"></i>+880 1234 56789</li>
+                            <li><i class="fa fa-envelope"></i><a
+                                    href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+                        </ul>
+                        <!-- End Top Contact -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+        <!-- Header Inner -->
+        <div class="header-inner">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <!-- Start Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
+                            </div>
+                            <!-- End Logo -->
+                            <!-- Mobile Nav -->
+                            <div class="mobile-nav"></div>
+                            <!-- End Mobile Nav -->
+                        </div>
 
-							<div class="col-lg-7 col-md-9 col-12">
-								<!-- Main Menu -->
-								<div class="main-menu">
-									<nav class="navigation">
-										<ul class="nav menu">
-											<li class="active"><a href="">Home </a></li>
-											<li><a href="/services">Services </a></li>
-											<li><a href="/packages">Packages </a></li>
-											<li><a href="/contact-us">Contact Us</a></li>
-										</ul>
-									</nav>
-								</div>
-								<!--/ End Main Menu -->
-							</div>
+                        <div class="col-lg-7 col-md-9 col-12">
+                            <!-- Main Menu -->
+                            <div class="main-menu">
+                                <nav class="navigation">
+                                    <ul class="nav menu">
+                                        <li class="active"><a href="">Home </a></li>
+                                        <li><a href="/services">Services </a></li>
+                                        <li><a href="/packages">Packages </a></li>
+                                        <li><a href="/contact-us">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!--/ End Main Menu -->
+                        </div>
 
-							<div class="col-lg-2 col-12">
-								<div class="get-quote">
-									<a href="/appointment" class="btn">Book Appointment</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ End Header Inner -->
-		</header>
-		<!-- End Header Area -->
+                        <div class="col-lg-2 col-12">
+                            <div class="get-quote">
+                                <a href="/appointment" class="btn">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
 
     <!-- Breadcrumbs -->
     <div class="breadcrumbs overlay">
-      <div class="container">
-        <div class="bread-inner">
-          <div class="row">
-            <div class="col-12">
-              <h2>Get Your Appointment</h2>
-              <ul class="bread-list">
-                <li><a href="index.html">Home</a></li>
-                <li><i class="icofont-simple-right"></i></li>
-                <li class="active">Appointment</li>
-              </ul>
+        <div class="container">
+            <div class="bread-inner">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Get Your Appointment</h2>
+                        <ul class="bread-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><i class="icofont-simple-right"></i></li>
+                            <li class="active">Appointment</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <!-- End Breadcrumbs -->
 
     <!-- Start Appointment -->
     <section class="appointment single-page">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 col-md-12 col-12">
-            <div class="appointment-inner">
-              <div class="title">
-                <h3>Book your appointment</h3>
-                <p>We will confirm your appointment within 2 hours</p>
-              </div>
-              <form class="form" action="#">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <input name="name" type="text" placeholder="Name" />
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-md-12 col-12">
+                    @foreach (['success', 'error', 'warning'] as $msg)
+                        @if (session($msg))
+                            <div class="alert alert-{{ $msg }} alert-dismissible fade show" role="alert">
+                                {{ session($msg) }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+                    @endforeach
+
+                    <div class="doctor-details-contact">
+                        <div class="appointment-inner">
+                            <div class="title">
+                                <h3>Book your appointment, Pay Later</h3>
+                                <small>You will get a payment link in 2 hours. You can make the payment online or
+                                    pay cash to the technician. </small>
+                            </div>
+                            <form class="form" action="{{ route('web.packages.store') }}" method="post">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="appointment_at" required
+                                                placeholder="Appointment Date" id="datepicker" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="nice-select form-control wide" tabindex="0">
+                                                <input type="hidden" name="number_of_persons" value="">
+                                                <span class="current">Select Number of persons</span>
+                                                <ul class="list">
+                                                    <li data-value="1" class="option selected">
+                                                        Number of persons (1)
+                                                    </li>
+                                                    <li data-value="2" class="option">2</li>
+                                                    <li data-value="3" class="option">3</li>
+                                                    <li data-value="4" class="option">4</li>
+                                                    <li data-value="5" class="option">5 or above</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <input name="name" id="name" type="text" required
+                                                placeholder="Full Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <input name="email" id="email" type="email"
+                                                placeholder="Email ID" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <input name="phone_number" id="phone_number" type="text" required
+                                                placeholder="Mobile number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="button">
+                                                <button type="submit" class="btn">
+                                                    Book An Appointment
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <input name="email" type="email" placeholder="Email" />
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <input name="phone" type="text" placeholder="Phone" />
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <div class="nice-select form-control wide" tabindex="0">
-                        <span class="current">Department</span>
-                        <ul class="list">
-                          <li data-value="1" class="option selected">
-                            Department
-                          </li>
-                          <li data-value="2" class="option">Cardiac Clinic</li>
-                          <li data-value="3" class="option">Neurology</li>
-                          <li data-value="4" class="option">Dentistry</li>
-                          <li data-value="5" class="option">
-                            Gastroenterology
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <div class="nice-select form-control wide" tabindex="0">
-                        <span class="current">Doctor</span>
-                        <ul class="list">
-                          <li data-value="1" class="option selected">Doctor</li>
-                          <li data-value="2" class="option">
-                            Dr. Akther Hossain
-                          </li>
-                          <li data-value="3" class="option">Dr. Dery Alex</li>
-                          <li data-value="4" class="option">Dr. Jovis Karon</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                      <input type="text" placeholder="Date" id="datepicker" />
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                      <textarea
-                        name="message"
-                        placeholder="Write Your Message Here....."
-                      ></textarea>
-                    </div>
-                  </div>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <div class="button">
-                        <button type="submit" class="btn">
-                          Book An Appointment
-                        </button>
-                      </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <div class="work-hour">
+                        <h3>Working Hours</h3>
+                        <ul class="time-sidual">
+                            <li class="day">Monday <span>8.00-20.00</span></li>
+                            <li class="day">Tuesday <span>9.00-18.30</span></li>
+                            <li class="day">Wednesday <span>8.00-20.00</span></li>
+                            <li class="day">Thursday <span>9.00-15.00</span></li>
+                            <li class="day">Friday <span>8.00-20.00</span></li>
+                            <li class="day">Saturday <span>9.00-18.30</span></li>
+                            <li class="day">Sunday <span>9.00-15.00</span></li>
+
+                        </ul>
                     </div>
-                  </div>
                 </div>
-              </form>
             </div>
-          </div>
-          <div class="col-lg-5 col-md-12">
-            <div class="work-hour">
-              <h3>Working Hours</h3>
-              <ul class="time-sidual">
-                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                <li class="day">Saturday <span>9.00-18.30</span></li>
-                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                <li class="day">Saturday <span>9.00-18.30</span></li>
-                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-                <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
-                <li class="day">Saturday <span>9.00-18.30</span></li>
-                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
     <!--/End Appointment -->
 
@@ -334,7 +331,7 @@
                             <ul class="time-sidual">
                                 <li class="day">Monday - Friday <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
-                                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                                <li class="day">Sunday <span>9.00-15.00</span></li>
                             </ul>
                         </div>
                     </div>
@@ -397,5 +394,6 @@
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>

@@ -170,27 +170,40 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-us-form">
+                            @foreach (['success', 'error', 'warning'] as $msg)
+                                @if (session($msg))
+                                    <div class="alert alert-{{ $msg }} alert-dismissible fade show"
+                                        role="alert">
+                                        {{ session($msg) }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                            @endforeach
                             <h2>Contact With Us</h2>
                             <p>If you have any questions please fell free to contact with us.</p>
                             <!-- Form -->
-                            <form class="form" method="post" action="mail/mail.php">
+                            <form class="form" method="post" action="{{ route('web.contact.store') }}">
+                                @csrf
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group">
                                             <input type="text" name="name" placeholder="Name" required="">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
+                                            <input type="email" name="email" style="text-transform:lowercase;"
+                                                placeholder="Email" required="">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input type="text" name="phone" placeholder="Phone" required="">
+                                            <input type="text" name="phone_number" placeholder="Phone"
+                                                required="">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group">
                                             <input type="text" name="subject" placeholder="Subject"
                                                 required="">
@@ -317,7 +330,7 @@
                             <ul class="time-sidual">
                                 <li class="day">Monday - Friday <span>8.00-20.00</span></li>
                                 <li class="day">Saturday <span>9.00-18.30</span></li>
-                                <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                                <li class="day">Sunday <span>9.00-15.00</span></li>
                             </ul>
                         </div>
                     </div>
