@@ -27,6 +27,11 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Support\Enums\ActionSize;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Tabs;
+use Filament\Support\Enums\Alignment;
+
+
+
 
 
 
@@ -47,23 +52,48 @@ class PackageResource extends Resource
             ->schema([
 
                 Section::make()
-                    ->columns(3)
+                    ->columns(4)
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
-                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull()->rows(5),
-                        TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
-                        TinyEditor::make('process')->columnSpanFull()->label('Process')->required(),
-                        FileUpload::make('image')->image()->directory('packages'),
+
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
-                        Repeater::make('testLists')->relationship()->label('Test Lists')
-                            ->schema([
-                                TextInput::make('title')->label('Title')->required(),
-                                TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+
+                        Tabs::make('Tabs')
+                            ->tabs([
+
+                                Tabs\Tab::make('Short Description')
+                                    ->schema([
+                                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull()->rows(5),
+                                    ]),
+                                Tabs\Tab::make('Description')
+                                    ->schema([
+                                        TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+                                    ]),
+                                Tabs\Tab::make('Process')
+                                    ->schema([
+                                        TinyEditor::make('process')->columnSpanFull()->label('Process')->required(),
+                                    ]),
+
+                                Tabs\Tab::make('Test Lists')
+                                    ->schema([
+                                        Repeater::make('testLists')->relationship()->label('Create / Update Test Lists')
+                                            ->schema([
+                                                TextInput::make('title')->label('Title')->required(),
+                                                TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+                                            ])
+                                            ->columnSpanFull()->reorderable(true)->reorderableWithButtons()
+                                            ->addActionLabel('Add Test List')->collapsible()
+                                            ->cloneable()->itemLabel(fn(array $state): ?string => $state['title'] . ' Test list' ?? null),
+                                    ]),
+
+                                Tabs\Tab::make('Upload Images')
+                                    ->schema([
+                                        FileUpload::make('image')->image()->directory('packages'),
+                                    ]),
+
                             ])->columnSpanFull()
-
-
                     ]),
                 //
             ]);

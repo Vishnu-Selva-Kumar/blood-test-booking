@@ -48,6 +48,11 @@
     <link rel="stylesheet" href="assets/css/color/color1.css" />
 
     <link rel="stylesheet" id="colors" />
+    <style>
+        .single-news > .news-body > .news-content > p {
+            min-height: 130px;
+        }
+    </style>
 </head>
 
 <body>
@@ -259,28 +264,28 @@
 
                 <div class="col-lg-9 col-12">
                     <div class="row">
-                        @foreach ( $packages as $package )
+                        @foreach ($packages as $package)
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <!-- Single Blog -->
+                                <div class="single-news">
+                                    <div class="news-head">
+                                        <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                                    </div>
+                                    <div class="news-body">
+                                        <div class="news-content">
 
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Blog -->
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-
-                                        <h2>
-                                            <a href="{{ route('web.packages.show',['slug' =>$package->slug ]) }}">{{ $package->title ?? '' }}</a>
-                                        </h2>
-                                        <p class="text">{{ $package->short_description ?? '' }}</p>
-                                        <a href="{{ route('web.packages.show',['slug' =>$package->slug ]) }}" class="date">Book Now</a>
+                                            <h2>
+                                                <a
+                                                    href="{{ route('web.packages.show', ['slug' => $package->slug]) }}">{{ $package->title ?? '' }}</a>
+                                            </h2>
+                                            <p class="text">{{ $package->short_description ?? '' }}</p>
+                                            <a href="{{ route('web.packages.show', ['slug' => $package->slug]) }}"
+                                                class="date">Book Now</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- End Single Blog -->
                             </div>
-                            <!-- End Single Blog -->
-                        </div>
-
                         @endforeach
 
                         <div class="col-12">
