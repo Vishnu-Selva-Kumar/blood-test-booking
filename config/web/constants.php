@@ -13,6 +13,15 @@ return [
         'pending' => 4,
         'rejected' => 5,
     ],
+
+    'contact_status' => [
+        'new' => 1,
+        'view' => 2,
+        'accpected' => 3,
+        'pending' => 4,
+        'rejected' => 5,
+    ],
+
     'static-pages' => [
         'about-us',
         'contact-us',
