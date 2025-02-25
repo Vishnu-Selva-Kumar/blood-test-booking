@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Package extends BaseModel
 {
@@ -23,8 +24,8 @@ class Package extends BaseModel
         return $this->belongsTo(Category::class);
     }
 
-    public function testLists()
+    public function testLists(): MorphMany
     {
-        return $this->hasMany(TestList::class);
+        return $this->morphMany(TestList::class, 'testlistable');
     }
 }

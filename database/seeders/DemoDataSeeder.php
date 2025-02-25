@@ -24,7 +24,7 @@ class DemoDataSeeder extends Seeder
         ]);
         // Create 10 categories
         // Package::factory(10)->create();
-        Service::factory(10)->create();
+        // Service::factory(10)->create();
         Booking::factory(10)->create();
     }
 }

@@ -71,7 +71,7 @@
     .doctor-details-biography h3 {
         border: 1px solid #8080809c !important;
         padding: 12px !important;
-        background: #8080809c !important;
+        background: #1a76d1 !important;
         color: white !important;
     }
 </style>
@@ -144,7 +144,7 @@
                                 <nav class="navigation">
                                     <ul class="nav menu">
                                         <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/service">Services </a></li>
+                                        <li><a href="/services">Services </a></li>
                                         <li><a href="/packages">Packages </a></li>
                                         <li><a href="/contact-us">Contact Us</a></li>
                                     </ul>
@@ -203,23 +203,24 @@
                                 {!! str($package->description)->markdown()->sanitizeHtml() !!}
                             </div>
 
-                            <div class="doctor-details-biography">
-                                <h3>{{ $package->title ?? '' }} Test List</h3>
-
-                                <div class="faq-item">
-                                    <ul class="accordion">
-                                        @foreach ($package->testLists as $test)
-                                            <li class="fadeInUp " data-wow-delay=".3s">
-                                                <a
-                                                    class="{{ $loop->index == 0 ? 'active' : '' }}">{{ $test->title ?? '' }}</a>
-                                                <div style="padding: 15px">
-                                                    {!! str($test->description)->markdown()->sanitizeHtml() !!}
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                            @if (count($package->testLists))
+                                <div class="doctor-details-biography">
+                                    <h3>{{ $package->title ?? '' }} Test List</h3>
+                                    <div class="faq-item">
+                                        <ul class="accordion">
+                                            @foreach ($package->testLists as $test)
+                                                <li class="fadeInUp " data-wow-delay=".3s">
+                                                    <a
+                                                        class="{{ $loop->index == 0 ? 'active' : '' }}">{{ $test->title ?? '' }}</a>
+                                                    <div style="padding: 15px">
+                                                        {!! str($test->description)->markdown()->sanitizeHtml() !!}
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
 
                             <div class="doctor-details-biography">
                                 <h3>Process</h3>
@@ -227,6 +228,7 @@
                                     {!! str($package->process)->markdown()->sanitizeHtml() !!}
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -242,7 +244,9 @@
                         @endif
                     @endforeach
                     <div class="doctor-details-item doctor-details-left">
+                        @if($package->image)
                         <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                        @endif
                         <div class="doctor-details-contact">
                             <div class="appointment-inner">
                                 <div class="title">
@@ -356,9 +360,9 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-5 col-12">
                                     <ul>
-                                        <li><a href="about-us"><i class="fa fa-caret-right"
+                                        <li><a href="/about-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="services"><i class="fa fa-caret-right"
+                                        <li><a href="/services"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>

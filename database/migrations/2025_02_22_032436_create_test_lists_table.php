@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('test_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('package_id');
+            $table->morphs('testlistable'); // This creates 'commentable_id' and 'commentable_type'
+
             $table->string('title');
             $table->text('description')->nullable();
             $table->integer('status')->default(config('web.constants.status.active'));

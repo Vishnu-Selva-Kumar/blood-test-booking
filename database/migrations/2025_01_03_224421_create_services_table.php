@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique()->nullable();
             $table ->string('short_description')->nullable();
-            $table->text('long_description')->nullable();
+            $table->text('description')->nullable();
+            $table->text('process')->nullable();
+            $table->json('faq')->nullable();
+            $table->json('widgets')->nullable();
             $table->string('image')->nullable();
             $table->double('price', 8, 2)->nullable();
             $table->double('special_price', 8, 2)->nullable();

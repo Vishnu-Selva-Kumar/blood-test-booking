@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaticPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,16 +15,16 @@ Route::name('web.')->group(function () {
 
     Route::resource('packages', PackageController::class)->parameters(['packages' => 'slug'])->names('packages')->only('index', 'show', 'store');
 
+    Route::resource('services', ServiceController::class)->parameters(['services' => 'slug'])->names('services')->only('index', 'show', 'store');
+
     Route::view('/site-map', 'site_map')->name('site-map');
 
     // no need to create a controller for these pages
     Route::view('/portfolio-details', 'portfolio-details')->name('portfolio-details');
-
     Route::view('/doctors', 'doctors')->name('doctors');
     Route::view('/doctor-detail', 'doctor-details')->name('doctor-details');
-
     Route::view('/blog-detail', 'blog-details')->name('blog-details');
-    Route::view('/service', 'service')->name('service');
+
     Route::view('/service-details', 'service-details')->name('service-details');
     Route::view('/appointment', 'appointment')->name('appointment');
 });

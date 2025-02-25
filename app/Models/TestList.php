@@ -10,8 +10,8 @@ class TestList extends BaseModel
     /** @use HasFactory<\Database\Factories\TestListFactory> */
     use HasFactory;
 
-    function package()
+    public function testlistable()
     {
-        return $this->belongsTo(Package::class);
+        return $this->morphTo();
     }
 }

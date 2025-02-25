@@ -45,6 +45,127 @@
     <!-- Color CSS -->
     <link rel="stylesheet" href="assets/css/color/color1.css" />
     <link rel="stylesheet" id="colors" />
+
+    <style>
+        .card::after {
+            display: block;
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: 35px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 19px 28px 5px rgba(64, 64, 64, 0.09);
+            box-shadow: 0 19px 28px 5px rgba(64, 64, 64, 0.09);
+            content: '';
+            z-index: -1;
+        }
+
+        a.card {
+            text-decoration: none;
+        }
+
+        .card {
+            position: relative;
+            border: 0;
+            border-radius: 0;
+            background-color: #fff;
+            -webkit-box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09);
+            box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09);
+        }
+
+        .card {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: .25rem;
+        }
+
+        .box-shadow {
+            -webkit-box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09) !important;
+            box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09) !important;
+        }
+
+        .ml-auto,
+        .mx-auto {
+            margin-left: auto !important;
+        }
+
+        .mr-auto,
+        .mx-auto {
+            margin-right: auto !important;
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        .bg-white {
+            background-color: #fff !important;
+        }
+
+        .ml-auto,
+        .mx-auto {
+            margin-left: auto !important;
+        }
+
+        .mr-auto,
+        .mx-auto {
+            margin-right: auto !important;
+        }
+
+        .d-block {
+            display: block !important;
+        }
+
+        img,
+        figure {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .card-text {
+            padding-top: 12px;
+            color: #8c8c8c;
+        }
+
+        .text-sm {
+            font-size: 12px !important;
+        }
+
+        p,
+        .p {
+            margin: 0 0 16px;
+        }
+
+        .card-title {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .pt-1,
+        .py-1 {
+            padding-top: .25rem !important;
+        }
+
+        .head-icon {
+            margin-top: 18px;
+            color: #FF4500
+        }
+    </style>
 </head>
 
 <body>
@@ -115,7 +236,7 @@
                                 <nav class="navigation">
                                     <ul class="nav menu">
                                         <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/service">Services </a></li>
+                                        <li><a href="/services">Services </a></li>
                                         <li><a href="/packages">Packages </a></li>
                                         <li><a href="/contact-us">Contact Us</a></li>
                                     </ul>
@@ -156,207 +277,35 @@
     </div>
     <!-- End Breadcrumbs -->
 
-    <!-- Start service -->
-    <section class="services section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-prescription"></i>
-                        <h4><a href="service-details.html">General Treatment</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
+    <section class="container services section ">
+        <div class="row pt-5 mt-30">
+            @php
+                $icons = ['fa-tint', 'fa-medkit', 'fa-ambulance', 'fa-heartbeat', 'fa-gratipay', 'fa-flask'];
+            @endphp
+
+            @if (count($services))
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-sm-6 mb-30 pb-5">
+                        <a class="card" href="{{ route('web.services.show', ['slug' => $service->slug]) }}">
+                            <div class="box-shadow bg-white rounded-circle mx-auto text-center"
+                                style="width: 90px; height: 90px; margin-top: -45px;"><i
+                                    class="fa  {{ $icons[$loop->index] }}   fa-3x head-icon"
+                                    style="color: #1a76d1"></i></div>
+                            <div class="card-body text-center">
+                                <h3 class="card-title pt-1">{{ $service->title ?? '' }}</h3>
+                                <p class="card-text text-sm">{{ $service->short_description ?? '' }}</p><span
+                                    class="text-sm text-uppercase font-weight-bold">Learn More&nbsp;<i
+                                        class="fe-icon-arrow-right"></i></span>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-tooth"></i>
-                        <h4><a href="service-details.html">Teeth Whitening</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-heart-alt"></i>
-                        <h4><a href="service-details.html">Heart Surgery</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-listening"></i>
-                        <h4><a href="service-details.html">Ear Treatment</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-eye-alt"></i>
-                        <h4><a href="service-details.html">Vision Problems</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-service">
-                        <i class="icofont icofont-blood"></i>
-                        <h4><a href="service-details.html">Blood Transfusion</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                            luctus dictum eros ut imperdiet.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            @endif
         </div>
     </section>
-    <!--/ End service -->
-
-    <!-- clients -->
-    <div class="clients overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="owl-carousel clients-slider">
-                        <div class="single-clients">
-                            <img src="assets/img/client1.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client2.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client3.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client4.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client5.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client1.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client2.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client3.png" alt="#" />
-                        </div>
-                        <div class="single-clients">
-                            <img src="assets/img/client4.png" alt="#" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/Ens clients -->
-
-    <!-- Start Appointment -->
-    <section class="appointment">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>We Are Always Ready to Help You. Book An Appointment</h2>
-                        <img src="assets/img/section-img.png" alt="#" />
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit praesent
-                            aliquet. pretiumts
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-md-12 col-12">
-
-                    <form class="form" action="{{ route('web.packages.store') }}" method="post">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <input type="text" name="appointment_at" placeholder="Appointment Date" required
-                                        id="datepicker" />
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <div class="nice-select form-control wide" tabindex="0">
-                                        <input type="hidden" name="number_of_persons" value="">
-                                        <span class="current">Number of persons</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected">
-                                                Number of persons (1)
-                                            </li>
-                                            <li data-value="2" class="option">2</li>
-                                            <li data-value="3" class="option">3</li>
-                                            <li data-value="4" class="option">4</li>
-                                            <li data-value="5" class="option">5 or above</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="form-group">
-                                    <input name="name" id="name" type="text" required
-                                        placeholder="Full Name" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="form-group">
-                                    <input name="email" id="email" type="email" placeholder="Email ID" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="form-group">
-                                    <input name="phone_number" id="phone_number" type="text" required
-                                        placeholder="Mobile number" />
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <div class="button">
-                                        <button type="submit" class="btn">
-                                            Book An Appointment
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
 
 
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="appointment-image">
-                        <img src="assets/img/contact-img.png" alt="#" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/End Appointment -->
+
 
 
     <!-- Footer Area -->
@@ -387,9 +336,9 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-5 col-12">
                                     <ul>
-                                        <li><a href="about-us"><i class="fa fa-caret-right"
+                                        <li><a href="/about-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="services"><i class="fa fa-caret-right"
+                                        <li><a href="/services"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>

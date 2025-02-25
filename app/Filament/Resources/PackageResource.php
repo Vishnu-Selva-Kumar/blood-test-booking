@@ -57,12 +57,9 @@ class PackageResource extends Resource
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         TextInput::make('slug'),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
-
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
-
                         Tabs::make('Tabs')
                             ->tabs([
-
                                 Tabs\Tab::make('Short Description')
                                     ->schema([
                                         Textarea::make('short_description')->label('Short description')->required()->columnSpanFull()->rows(5),
@@ -75,7 +72,6 @@ class PackageResource extends Resource
                                     ->schema([
                                         TinyEditor::make('process')->columnSpanFull()->label('Process')->required(),
                                     ]),
-
                                 Tabs\Tab::make('Test Lists')
                                     ->schema([
                                         Repeater::make('testLists')->relationship()->label('Create / Update Test Lists')
@@ -87,15 +83,13 @@ class PackageResource extends Resource
                                             ->addActionLabel('Add Test List')->collapsible()
                                             ->cloneable()->itemLabel(fn(array $state): ?string => $state['title'] . ' Test list' ?? null),
                                     ]),
-
                                 Tabs\Tab::make('Upload Images')
                                     ->schema([
                                         FileUpload::make('image')->image()->directory('packages'),
                                     ]),
-
                             ])->columnSpanFull()
                     ]),
-                //
+
             ]);
     }
 

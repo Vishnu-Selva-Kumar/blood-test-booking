@@ -380,9 +380,9 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-5 col-12">
                                     <ul>
-                                        <li><a href="about-us"><i class="fa fa-caret-right"
+                                        <li><a href="/about-us"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="services"><i class="fa fa-caret-right"
+                                        <li><a href="/services"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
