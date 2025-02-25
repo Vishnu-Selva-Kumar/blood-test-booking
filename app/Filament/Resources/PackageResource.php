@@ -97,7 +97,7 @@ class PackageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->searchable()->sortable(),
+                TextColumn::make('id')->searchable()->sortable()->width('5%'),
                 TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('category.name')->label('Category')->searchable()->sortable(),
                 SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),

@@ -129,7 +129,7 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="appointment" class="btn">Book Appointment</a>
+                                <a href="/appointment" class="btn">Book Appointment</a>
                             </div>
                         </div>
                     </div>

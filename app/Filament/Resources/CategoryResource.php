@@ -48,7 +48,8 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->searchable()->sortable()->width('75%'),
+                TextColumn::make('id')->searchable()->sortable()->width('5%'),
+                TextColumn::make('name')->searchable()->sortable()->width('70%'),
                 SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
