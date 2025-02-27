@@ -10,8 +10,9 @@ return [
         'new' => 1,
         'view' => 2,
         'accpected' => 3,
-        'pending' => 4,
-        'rejected' => 5,
+        'in-process' => 4,
+        'pending' => 5,
+        'rejected' => 6,
     ],
 
     'contact_status' => [
