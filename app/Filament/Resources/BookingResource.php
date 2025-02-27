@@ -19,6 +19,11 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Support\Enums\ActionSize;
+use Filament\Forms\Components\Grid;
+
+
 
 class BookingResource extends Resource
 {
@@ -41,13 +46,19 @@ class BookingResource extends Resource
                 Section::make()
                     ->columns(3)
                     ->schema([
-                        TextInput::make('name')->label('Name')->required(),
-                        TextInput::make('email')->label('Email')->required()->email(),
-                        TextInput::make('phone_number')->label('Phone number')->required(),
-                        Textarea::make('address')->label('Address')->required(),
-                        TextInput::make('age')->label('Age')->numeric(),
-                        DateTimePicker::make('appointment_at'),
-                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status')))),
+                        Grid::make(3) // Defines a 3-column layout
+                            ->schema([
+                                TextInput::make('name')->label('Name')->required(),
+                                TextInput::make('email')->label('Email')->required()->email(),
+                                TextInput::make('phone_number')->label('Phone number')->required(),
+                                TextInput::make('number_of_persons')->label('Number of persons')->numeric(),
+                                // TextInput::make('age')->label('Age')->numeric(),
+                                DateTimePicker::make('appointment_at'),
+                                Textarea::make('address')->label('Address')->required(),
+                                Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status')))),
+
+                            ]),
+
                     ])
                 //
             ]);
@@ -62,18 +73,18 @@ class BookingResource extends Resource
                 TextColumn::make('email')->searchable()->sortable(),
                 TextColumn::make('phone_number')->searchable()->sortable(),
                 TextColumn::make('appointment_at')->dateTime()->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status'))))->sortable(),
-
-                //
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.booking_status'))))
+                    ->sortable()->width('15%'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\DeleteAction::make(),
-
+                ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])->iconButton()->icon('heroicon-m-ellipsis-horizontal')->size(ActionSize::Small)->tooltip('Actions')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

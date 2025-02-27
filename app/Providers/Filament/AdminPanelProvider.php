@@ -80,6 +80,12 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop()
             ->spa()
             ->unsavedChangesAlerts()
+            ->sidebarWidth('250px')
+            ->databaseNotifications()
+            ->unsavedChangesAlerts()
+            ->maxContentWidth(MaxWidth::Full)
+            ->brandLogo(asset('assets/img/logo.png'))
+            ->favicon(asset('assets/img/favicon.png'))
             // ->maxContentWidth(MaxWidth::Full)
             // ->sidebarFullyCollapsibleOnDesktop()
         ;

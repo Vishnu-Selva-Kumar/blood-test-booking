@@ -15,7 +15,13 @@ class StorePackageRequest extends BaseRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|string|email|max:255',
+            'phone_number' => 'required|string|max:20',
+            'address' => 'nullable|string',
+            'age' => 'nullable|integer|min:0',
+            'appointment_at' => 'nullable|date',
+            'number_of_persons' => 'nullable|integer|min:1',
         ];
     }
 }

@@ -18,11 +18,13 @@ class DemoDataSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            CategorySeeder::class,
+            StaticPageSeeder::class,
+        ]);
         // Create 10 categories
-        Category::factory(10)->create();
-        Package::factory(10)->create();
-        Service::factory(10)->create();
-        StaticPage::factory(10)->create();
+        // Package::factory(10)->create();
+        // Service::factory(10)->create();
         Booking::factory(10)->create();
     }
 }

@@ -5,15 +5,27 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStaticPageRequest;
 use App\Http\Requests\UpdateStaticPageRequest;
 use App\Models\StaticPage;
+use Illuminate\Http\Request;
 
 class StaticPageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        try {
+            $staticPage =  StaticPage::where('slug', $request->slug)->first();
+
+            if (in_array($request->slug, ['about-us', 'contact-us'])) {
+                $page = 'static_pages.' . $request->slug;
+            } else {
+                $page = 'static_pages.page';
+            }
+            return view($page, compact('staticPage'));
+        } catch (\Throwable $th) {
+            return  $staticPage =  StaticPage::where('slug', $request->slug)->first();
+        }
     }
 
     /**

@@ -36,11 +36,11 @@ class BaseModel extends Model
 
     public function scopeWhereInActive($query)
     {
-        return $query->where('status', config('constants.status.inactive'));
+        return $query->where(['status' => config('web.constants.status.inactive') ?? 0]);
     }
 
     public function scopeWhereActive($query)
     {
-        return $query->where('status', config('constants.status.active'));
+        return $query->where(['status' => config('web.constants.status.active') ?? 1]);
     }
 }

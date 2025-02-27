@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Support\Enums\ActionSize;
 
 class StaticPageResource extends Resource
 {
@@ -69,18 +71,20 @@ class StaticPageResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->searchable()->sortable(),
+                TextColumn::make('id')->searchable()->sortable()->width('5%'),
                 TextColumn::make('title')->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
-                Tables\Actions\ViewAction::make(),
+                ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])->iconButton()->icon('heroicon-m-ellipsis-horizontal')->size(ActionSize::Small)->tooltip('Actions')
 
             ])
             ->bulkActions([

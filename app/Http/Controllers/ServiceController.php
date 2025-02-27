@@ -13,7 +13,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::paginate(9);
+
+        return view('service', compact('services'));
     }
 
     /**
@@ -35,9 +37,11 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $service)
+    public function show(String $slug)
     {
-        //
+        $package = Service::where('slug', $slug)->firstOrFail();
+
+        return view('package-details', compact('package'));
     }
 
     /**

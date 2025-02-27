@@ -23,6 +23,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Support\Enums\ActionSize;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Support\Enums\Alignment;
 
 class ServiceResource extends Resource
 {
@@ -42,28 +49,29 @@ class ServiceResource extends Resource
                 Section::make()
                     ->columns(3)
                     ->schema([
-                        TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                        TextInput::make('slug'),
-                        TextInput::make('price')->label('Price')->required()->numeric(),
-                        TextInput::make('special_price')->label('Special Price')->numeric(),
-                        FileUpload::make('image')->image()->directory('services'),
-                        Textarea::make('short_description')->label('Short description')->required()->columnSpanFull(),
-                        MarkdownEditor::make('long_description')->toolbarButtons([
-                            'attachFiles',
-                            'blockquote',
-                            'bold',
-                            'bulletList',
-                            'codeBlock',
-                            'heading',
-                            'italic',
-                            'link',
-                            'orderedList',
-                            'redo',
-                            'strike',
-                            'table',
-                            'undo',
-                        ])->label('Description')->columnSpanFull(),
-                        Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                        Section::make()
+                            ->columns(4)
+                            ->schema([
+                                TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
+                                TextInput::make('slug'),
+                                Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                                Tabs::make('Tabs')
+                                    ->tabs([
+                                        Tab::make('Short Description')
+                                            ->schema([
+                                                Textarea::make('short_description')->label('Short description')->columnSpanFull()->rows(5),
+                                            ]),
+                                        Tab::make('Description')
+                                            ->schema([
+                                                TinyEditor::make('description')->columnSpanFull()->label('Description')->required(),
+                                            ]),
+                                        Tab::make('Process')
+                                            ->schema([
+                                                TinyEditor::make('process')->columnSpanFull()->label('Process')->required(),
+                                            ])
+                                    ])->columnSpanFull()
+                            ]),
+
                     ])
 
 
@@ -74,16 +82,20 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->searchable()->sortable(),
+                TextColumn::make('id')->searchable()->sortable()->width('5%'),
                 TextColumn::make('title')->searchable()->sortable(),
-                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable(),
+                SelectColumn::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->sortable()->width('15%'),
                 //
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])->iconButton()->icon('heroicon-m-ellipsis-horizontal')->size(ActionSize::Small)->tooltip('Actions')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

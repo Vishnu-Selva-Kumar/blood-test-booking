@@ -18,8 +18,13 @@ return new class extends Migration
             $table->string('slug')->unique()->nullable();
             $table->foreignIdFor(Category::class)->nullable();
             $table->text('image')->nullable();
+            $table->double('price')->nullable();
+            $table->double('special_price')->nullable();
             $table->text('short_description')->nullable();
             $table->text('description')->nullable();
+            $table->text('process')->nullable();
+            $table->json('faq')->nullable();
+            $table->json('widgets')->nullable();
             $table->integer('status')->default(config('web.constants.status.active'));
             $table->timestamps();
         });
