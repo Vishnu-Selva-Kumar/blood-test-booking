@@ -41,13 +41,15 @@ class PackageController extends Controller
     public function store(StorePackageRequest $request)
     {
         try {
-            $validatedData = $request->validated();
 
+            $validatedData = $request->validated();
+            unset($validatedData['beneficiary']);
             if (isset($validatedData['appointment_at'])) {
                 $validatedData['appointment_at'] = date('Y-m-d', strtotime($validatedData['appointment_at']));
             }
 
-            Booking::create($validatedData);
+            $booking =  Booking::create($validatedData);
+            // $booking->beneficiaries()->createMany($request->beneficiary);
             return redirect()->back()->with('success', 'Booking successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create package: ' . $e->getMessage());

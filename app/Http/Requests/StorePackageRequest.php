@@ -22,6 +22,11 @@ class StorePackageRequest extends BaseRequest
             'age' => 'nullable|integer|min:0',
             'appointment_at' => 'nullable|date',
             'number_of_persons' => 'nullable|integer|min:1',
+            'beneficiary' => 'required|array',
+            'beneficiary.*.name' => 'nullable|string|max:255',
+            'beneficiary.*.age' => 'nullable|integer|min:0',
+            'beneficiary.*.gender' => 'nullable|string|in:male,female',
+
         ];
     }
 }

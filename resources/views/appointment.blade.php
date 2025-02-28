@@ -116,10 +116,14 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}" ><a href="{{ route('web.home') }}">Home</a></li>
-                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}" ><a href="{{ route('web.services.index') }}">Services</a></li>
-                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}" ><a href="{{ route('web.packages.index') }}">Packages</a></li>
-                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}" ><a href="{{ route('web.contact.index') }}">Contact us</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}"><a
+                                                href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.packages.index') }}">Packages</a></li>
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -208,31 +212,42 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="row show_number_of_persons_list">
+                                </div>
+
+                                <div class="row">
 
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <input name="name" id="name" type="text" required
-                                                placeholder="Full Name" />
+                                            <input name="name" id="name" type="text" autocomplete="off"
+                                                required placeholder="Your Full Name" />
                                         </div>
                                     </div>
+
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <input name="email" id="email" type="email"
+                                            <input name="email" id="email" type="email" autocomplete="off"
                                                 placeholder="Email ID" />
                                         </div>
                                     </div>
+
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <input name="phone_number" id="phone_number" type="text" required
-                                                placeholder="Mobile number" />
+                                            <input name="phone_number" id="phone_number" type="text"
+                                                autocomplete="off" required placeholder="Mobile number" />
                                         </div>
                                     </div>
+
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
+                                            <textarea name="address" autocomplete="off" id="address" placeholder="Write Your address Here....."></textarea>
                                         </div>
                                     </div>
+
                                 </div>
+
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
@@ -244,6 +259,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
