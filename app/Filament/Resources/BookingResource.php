@@ -109,20 +109,8 @@ class BookingResource extends Resource
             'index' => Pages\ListBookings::route('/'),
             'create' => Pages\CreateBooking::route('/create'),
             'edit' => Pages\EditBooking::route('/{record}/edit'),
-            // 'view' => Pages\ViewBooking::route('/{record}')
+            'view' => Pages\ViewBooking::route('/{record}'), // Ensure this exists
+
         ];
-    }
-
-
-    public static function infolist(Infolist $infolist): Infolist
-    {
-        return $infolist
-            ->schema([
-                Infolists\Components\TextEntry::make('name'),
-                Infolists\Components\TextEntry::make('email'),
-                Infolists\Components\TextEntry::make('phone_number'),
-                Infolists\Components\TextEntry::make('appointment_at'),
-                Infolists\Components\TextEntry::make('address'),
-            ]);
     }
 }

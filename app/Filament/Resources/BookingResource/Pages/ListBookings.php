@@ -16,9 +16,4 @@ class ListBookings extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
-
-    public function getMaxContentWidth(): ?string
-    {
-        return 'full'; // Set to desired width (e.g., '7xl', '5xl', 'full', etc.)
-    }
 }
