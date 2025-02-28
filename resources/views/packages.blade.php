@@ -49,6 +49,9 @@
         .single-news>.news-body>.news-content>p {
             min-height: 130px;
         }
+        .single-news > .news-body > .news-content > h2 {
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -120,12 +123,16 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}" ><a href="{{ route('web.home') }}">Home</a></li>
-                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}" ><a href="{{ route('web.services.index') }}">Services</a></li>
-                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}" ><a href="{{ route('web.packages.index') }}">Packages</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}"><a
+                                                href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.packages.index') }}">Packages</a></li>
 
 
-                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}" ><a href="{{ route('web.contact.index') }}">Contact us</a></li>
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>

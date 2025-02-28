@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Booking;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('test_lists', function (Blueprint $table) {
+        Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
-            $table->morphs('testlistable'); // This creates 'commentable_id' and 'commentable_type'
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->integer('status')->default(config('web.constants.status.active'));
+            $table->foreignIdFor(Booking::class)->nullable()->constrained()->onDelete('cascade');
+            $table->string('name')->nullable();
+            $table->integer('age')->nullable();
+            $table->integer('gender')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('test_lists');
+        Schema::dropIfExists('beneficiaries');
     }
 };

@@ -25,7 +25,7 @@ class StorePackageRequest extends BaseRequest
             'beneficiary' => 'required|array',
             'beneficiary.*.name' => 'nullable|string|max:255',
             'beneficiary.*.age' => 'nullable|integer|min:0',
-            'beneficiary.*.gender' => 'nullable|string|in:male,female',
+            'beneficiary.*.gender' => 'nullable|integer|in:1,2',
 
         ];
     }

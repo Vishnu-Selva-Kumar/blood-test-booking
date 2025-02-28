@@ -46,7 +46,7 @@
 
             // Append new fields
             var parentElement = e('<div>').addClass('additional-fields');
-            for (var i = 1; i <= numberOfPersons; i++) {
+            for (var i = 0; i < numberOfPersons; i++) {
                 var nameField = e('<div>').addClass('col-lg-12 col-md-12 col-12').append(
                     e('<div>').addClass('form-group').append(
                         e('<input>').attr({
@@ -79,8 +79,8 @@
                             class: 'form-control',
                             required: true
                         }).append(
-                            e('<option>').attr('value', 'male').text('Male'),
-                            e('<option>').attr('value', 'female').text('Female')
+                            e('<option>').attr('value', 1).text('Male'),
+                            e('<option>').attr('value', 2).text('Female')
                         )
                     )
                 );

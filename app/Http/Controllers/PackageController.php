@@ -49,7 +49,9 @@ class PackageController extends Controller
             }
 
             $booking =  Booking::create($validatedData);
-            // $booking->beneficiaries()->createMany($request->beneficiary);
+
+            $booking->beneficiaries()->createMany($request->beneficiary);
+
             return redirect()->back()->with('success', 'Booking successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create package: ' . $e->getMessage());
