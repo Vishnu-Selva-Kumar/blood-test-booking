@@ -14,8 +14,17 @@ class PackageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $category = null)
     {
+        if ($category) {
+            $categoryDetails = Category::where('slug', $category)->firstOrFail();
+        } else {
+
+            $categoryDetails = null;
+        }
+
+        return $categoryDetails;
+
         $packages = Package::paginate(9);
         $categories = Category::query()->whereActive()->latest()->get()->take(25);
         return view('packages', compact('packages', 'categories'));
