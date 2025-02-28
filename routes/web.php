@@ -11,17 +11,14 @@ Route::name('web.')->group(function () {
     Route::get('/{slug}', [StaticPageController::class, 'index'])
         ->whereIn('slug', config('web.constants.static-pages') ?? [])->name('static.page');
 
-    Route::view('/', 'home')->name('home');
-    Route::view('/index.html', 'home')->name('home.index');
+    Route::get('/', [StaticPageController::class, 'create'])->name('home');
+
 
     Route::resource('packages', PackageController::class)->parameters(['packages' => 'slug'])
         ->names('packages')->only('index', 'show', 'store');
     Route::resource('services', ServiceController::class)->parameters(['services' => 'slug'])
         ->names('services')->only('index', 'show', 'store');
-
-    Route::get('packages/{category?}', [PackageController::class, 'index'])->name('packages.category');
-
-
+    Route::get('category/{category}', [PackageController::class, 'index'])->name('packages.category');
     Route::resource('contact-us', ContactController::class)->names('contact')->only('index', 'store');
     Route::view('/appointment', 'appointment')->name('appointment');
     Route::view('/site-map', 'site_map')->name('site-map');

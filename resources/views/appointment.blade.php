@@ -103,7 +103,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
+                                <a href="/"><img src="assets/img/logo.png" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -116,10 +116,10 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/services">Services </a></li>
-                                        <li><a href="/packages">Packages </a></li>
-                                        <li><a href="/contact-us">Contact Us</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}" ><a href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}" ><a href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}" ><a href="{{ route('web.packages.index') }}">Packages</a></li>
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}" ><a href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -128,7 +128,7 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="/appointment" class="btn">Book Appointment</a>
+                                <a href="{{ route('web.appointment') }}" class="btn">Book Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                     <div class="col-12">
                         <h2>Get Your Appointment</h2>
                         <ul class="bread-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Appointment</li>
                         </ul>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStaticPageRequest;
 use App\Http\Requests\UpdateStaticPageRequest;
+use App\Models\Category;
+use App\Models\Package;
+use App\Models\Service;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 
@@ -33,7 +36,11 @@ class StaticPageController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::whereActive()->take(12)->get();
+        $categories = Category::whereActive()->get()->take(12);
+        $packages = Package::whereActive()->get()->take(3);
+        
+        return view('home', compact('services', 'categories', 'packages'));
     }
 
     /**
