@@ -25,12 +25,10 @@ return [
 
     'static-pages' => [
         'about-us',
-        'contact-us',
         'terms-conditions',
         'privacy-policy',
         'refund-policy',
         'help-center',
-
     ],
 
 ];

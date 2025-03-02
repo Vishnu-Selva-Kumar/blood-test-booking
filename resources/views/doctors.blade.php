@@ -104,7 +104,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo.svg" alt="#" /></a>
+                                <a href="/"><img src="assets/img/logo.svg" alt="#" /></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -119,7 +119,7 @@
                                         <li>
                                             <a href="#">Home <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
-                                                <li><a href="index.html">Default Homepage</a></li>
+                                                <li><a href="/">Default Homepage</a></li>
                                                 <li><a href="index2.html">Animation Homepage</a></li>
                                             </ul>
                                         </li>
@@ -192,7 +192,7 @@
                     <div class="col-12">
                         <h2>Meet Our Qualified Doctors</h2>
                         <ul class="bread-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Doctors</li>
                         </ul>

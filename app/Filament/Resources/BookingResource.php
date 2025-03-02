@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingResource\Pages;
 use App\Filament\Resources\BookingResource\RelationManagers;
+use App\Filament\Resources\BookingResource\RelationManagers\BeneficiariesRelationManager;
 use App\Models\Booking;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
@@ -22,6 +23,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Support\Enums\ActionSize;
 use Filament\Forms\Components\Grid;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
 
 
 
@@ -96,7 +99,7 @@ class BookingResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BeneficiariesRelationManager::class,
         ];
     }
 
@@ -106,6 +109,8 @@ class BookingResource extends Resource
             'index' => Pages\ListBookings::route('/'),
             'create' => Pages\CreateBooking::route('/create'),
             'edit' => Pages\EditBooking::route('/{record}/edit'),
+            'view' => Pages\ViewBooking::route('/{record}'), // Ensure this exists
+
         ];
     }
 }

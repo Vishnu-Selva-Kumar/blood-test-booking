@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Support\Enums\ActionSize;
+use Filament\Forms\Set;
+use Illuminate\Support\Str;
 
 class CategoryResource extends Resource
 {
@@ -38,7 +40,8 @@ class CategoryResource extends Resource
                 Section::make()
                     ->columns(2)
                     ->schema([
-                        TextInput::make('name')->label('Name')->required(),
+                        TextInput::make('name')->label('Name')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
+                        TextInput::make('slug'),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->required(),
                     ])
             ]);

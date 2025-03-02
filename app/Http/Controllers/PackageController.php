@@ -14,10 +14,16 @@ class PackageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(?Category $category =NULL)
     {
-        $packages = Package::paginate(9);
+        if (isset($category)) {
+            $packages = Package::where('category_id', $category->id)->paginate(9);
+        } else {
+           $packages = Package::paginate(9);
+        }
+
         $categories = Category::query()->whereActive()->latest()->get()->take(25);
+
         return view('packages', compact('packages', 'categories'));
     }
 
@@ -35,13 +41,17 @@ class PackageController extends Controller
     public function store(StorePackageRequest $request)
     {
         try {
-            $validatedData = $request->validated();
 
+            $validatedData = $request->validated();
+            unset($validatedData['beneficiary']);
             if (isset($validatedData['appointment_at'])) {
                 $validatedData['appointment_at'] = date('Y-m-d', strtotime($validatedData['appointment_at']));
             }
 
-            Booking::create($validatedData);
+            $booking =  Booking::create($validatedData);
+
+            $booking->beneficiaries()->createMany($request->beneficiary);
+
             return redirect()->back()->with('success', 'Booking successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create package: ' . $e->getMessage());

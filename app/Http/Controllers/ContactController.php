@@ -13,6 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
+
         return view('static_pages.contact-us');
     }
 

@@ -39,7 +39,56 @@
             var i = s.data("display") || s.text();
             n.find('input[name="number_of_persons"]').val(s.data("value"));
             n.find(".current").html(i);
-            n.prev("select").val(s.data("value")).trigger("change")
+            n.prev("select").val(s.data("value")).trigger("change");
+
+            e('.show_number_of_persons_list').html('');
+            var numberOfPersons = parseInt(s.data("value"));
+
+            // Append new fields
+            var parentElement = e('<div>').addClass('additional-fields');
+            for (var i = 0; i < numberOfPersons; i++) {
+                var nameField = e('<div>').addClass('col-lg-12 col-md-12 col-12').append(
+                    e('<div>').addClass('form-group').append(
+                        e('<input>').attr({
+                            type: 'text',
+                            name: 'beneficiary[' + i + '][name]',
+                            id: 'name-' + i,
+                            required: true,
+                            placeholder: 'Beneficiary name'
+                        })
+                    )
+                );
+
+                var ageField = e('<div>').addClass('col-lg-6 col-md-6').append(
+                    e('<div>').addClass('form-group').append(
+                        e('<input>').attr({
+                            type: 'text',
+                            name: 'beneficiary[' + i + '][age]',
+                            id: 'age-' + i,
+                            required: true,
+                            placeholder: 'Age'
+                        })
+                    )
+                );
+
+                var genderField = e('<div>').addClass('col-lg-6 col-md-6').append(
+                    e('<div>').addClass('form-group').append(
+                        e('<select>').attr({
+                            name: 'beneficiary[' + i + '][gender]',
+                            id: 'gender-' + i,
+                            class: 'form-control',
+                            required: true
+                        }).append(
+                            e('<option>').attr('value', 1).text('Male'),
+                            e('<option>').attr('value', 2).text('Female')
+                        )
+                    )
+                );
+
+                parentElement.append(nameField, ageField, genderField);
+
+            }
+            e('.show_number_of_persons_list').append(parentElement.html());
 
         }), e(document).on("keydown.nice_select", ".nice-select", function (t) {
             var s = e(this),

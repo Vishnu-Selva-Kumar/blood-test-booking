@@ -13,7 +13,7 @@
     <title>Mediplus - Medical and Doctor HTML Template.</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}" />
 
     <!-- Google Fonts -->
     <link
@@ -21,36 +21,37 @@
         rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}" />
     <!-- icofont CSS -->
-    <link rel="stylesheet" href="assets/css/icofont.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/icofont.css') }}" />
     <!-- Slicknav -->
-    <link rel="stylesheet" href="assets/css/slicknav.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.min.css') }}" />
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="assets/css/owl-carousel.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}" />
     <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="assets/css/datepicker.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/datepicker.css') }}" />
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}" />
     <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
     <!-- Mediplus CSS -->
-    <link rel="stylesheet" href="assets/css/normalize.css" />
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-
+    <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     <!-- Color CSS -->
-    <link rel="stylesheet" href="assets/css/color/color1.css" />
-
+    <link rel="stylesheet" href="{{ asset('assets/css/color/color1.css') }}" />
     <link rel="stylesheet" id="colors" />
     <style>
         .single-news>.news-body>.news-content>p {
             min-height: 130px;
+        }
+
+        .single-news>.news-body>.news-content>h2 {
+            font-size: 16px;
         }
     </style>
 </head>
@@ -110,7 +111,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
+                                <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -123,10 +124,16 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/services">Services </a></li>
-                                        <li><a href="/packages">Packages </a></li>
-                                        <li><a href="/contact-us">Contact Us</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}"><a
+                                                href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.packages.index') }}">Packages</a></li>
+
+
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -135,9 +142,10 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="/appointment" class="btn">Book Appointment</a>
+                                <a href="{{ route('web.appointment') }}" class="btn">Book Appointment</a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -154,7 +162,7 @@
                     <div class="col-12">
                         <h2>Packages</h2>
                         <ul class="bread-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">Packages</li>
                         </ul>
@@ -187,7 +195,9 @@
                             <h3 class="title">Categories</h3>
                             <ul class="categor-list">
                                 @foreach ($categories as $category)
-                                    <li><a href="#">{{ $category->name ?? '' }}</a></li>
+                                    <li><a
+                                            href="{{ route('web.packages.category', [$category->id]) }}">{{ $category->name ?? '' }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -233,11 +243,12 @@
                                 <!-- Single Blog -->
                                 <div class="single-news">
                                     <div class="news-head">
-                                        <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                                        @if ($package->imageUrl)
+                                            <img src="{{ $package->imageUrl }}" alt="#" />
+                                        @endif
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
-
                                             <h2>
                                                 <a
                                                     href="{{ route('web.packages.show', ['slug' => $package->slug]) }}">{{ $package->title ?? '' }}</a>
@@ -253,10 +264,7 @@
                         @endforeach
 
                         <div class="col-12">
-
                             {!! $packages->withQueryString()->links('pagination::custom') !!}
-
-
                         </div>
                     </div>
                 </div>
@@ -268,6 +276,7 @@
 
     <!-- Footer Area -->
     <footer id="footer" class="footer ">
+
         <!-- Footer Top -->
         <div class="footer-top">
             <div class="container">
@@ -353,44 +362,43 @@
         <!--/ End Copyright -->
     </footer>
     <!--/ End Footer Area -->
-
-    <!-- jquery Min JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- jquery Migrate JS -->
-    <script src="assets/js/jquery-migrate.js"></script>
-    <!-- Easing JS -->
-    <script src="assets/js/easing.js"></script>
-    <!-- Color JS -->
-    <script src="assets/js/colors.js"></script>
-    <!-- Popper JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Datepicker JS -->
-    <script src="assets/js/bootstrap-datepicker.js"></script>
-    <!-- Jquery Nav JS -->
-    <script src="assets/js/jquery.nav.js"></script>
-    <!-- Slicknav JS -->
-    <script src="assets/js/slicknav.min.js"></script>
-    <!-- ScrollUp JS -->
-    <script src="assets/js/jquery.scrollUp.min.js"></script>
-    <!-- Niceselect JS -->
-    <script src="assets/js/niceselect.js"></script>
-    <!-- Tilt Jquery JS -->
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="assets/js/owl-carousel.js"></script>
-    <!-- counterup JS -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <!-- Steller JS -->
-    <script src="assets/js/steller.js"></script>
-    <!-- Wow JS -->
-    <script src="assets/js/wow.min.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <!-- jQuery Migrate -->
+    <script src="{{ asset('assets/js/jquery-migrate.js') }}"></script>
+    <!-- Easing -->
+    <script src="{{ asset('assets/js/easing.js') }}"></script>
+    <!-- Colors -->
+    <script src="{{ asset('assets/js/colors.js') }}"></script>
+    <!-- Popper -->
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- Bootstrap Datepicker -->
+    <script src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
+    <!-- jQuery Nav -->
+    <script src="{{ asset('assets/js/jquery.nav.js') }}"></script>
+    <!-- Slicknav -->
+    <script src="{{ asset('assets/js/slicknav.min.js') }}"></script>
+    <!-- ScrollUp -->
+    <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
+    <!-- Niceselect -->
+    <script src="{{ asset('assets/js/niceselect.js') }}"></script>
+    <!-- Tilt jQuery -->
+    <script src="{{ asset('assets/js/tilt.jquery.min.js') }}"></script>
+    <!-- Owl Carousel -->
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <!-- Counterup -->
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <!-- Steller -->
+    <script src="{{ asset('assets/js/steller.js') }}"></script>
+    <!-- Wow -->
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <!-- Magnific Popup -->
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- Main -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>

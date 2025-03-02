@@ -30,11 +30,6 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Tabs;
 use Filament\Support\Enums\Alignment;
 
-
-
-
-
-
 class PackageResource extends Resource
 {
     protected static ?string $model = Package::class;
@@ -50,12 +45,11 @@ class PackageResource extends Resource
     {
         return $form
             ->schema([
-
                 Section::make()
                     ->columns(4)
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                        TextInput::make('slug'),
+                        TextInput::make('slug')->label('Slug')->unique(ignorable: fn($record) => $record)->required(),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                         Tabs::make('Tabs')
@@ -85,7 +79,7 @@ class PackageResource extends Resource
                                     ]),
                                 Tabs\Tab::make('Upload Images')
                                     ->schema([
-                                        FileUpload::make('image')->image()->directory('packages'),
+                                        FileUpload::make('image')->image()->directory('packages')->optimize('webp')->resize(50),
                                     ]),
                             ])->columnSpanFull()
                     ]),

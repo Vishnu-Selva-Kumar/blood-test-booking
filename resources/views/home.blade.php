@@ -40,6 +40,21 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <style>
+        .section-title {
+            margin-bottom: 15px;
+        }
+
+        section.services.section {
+            padding: 50px 0px;
+        }
+
+        .services .single-service h4 a {
+            font-size: 16px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -98,7 +113,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="#"></a>
+                                <a href="/"><img src="assets/img/logo.png" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -111,10 +126,14 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/services">Services </a></li>
-                                        <li><a href="/packages">Packages </a></li>
-                                        <li><a href="/contact-us">Contact Us</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}"><a
+                                                href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.packages.index') }}">Packages</a></li>
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -123,7 +142,7 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="/appointment" class="btn">Book Appointment</a>
+                                <a href="{{ route('web.appointment') }}" class="btn">Book Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +166,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
                                     pellentesque, faucibus libero eu, gravida quam. </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Get Appointment</a>
+                                    <a href="{{ route('web.appointment') }}" class="btn">Get Appointment</a>
                                     <a href="#" class="btn primary">Learn More</a>
                                 </div>
                             </div>
@@ -166,8 +185,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
                                     pellentesque, faucibus libero eu, gravida quam. </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Get Appointment</a>
-                                    <a href="#" class="btn primary">About Us</a>
+                                    <a href="{{ route('web.appointment') }}" class="btn">Get Appointment</a>
+                                    <a href="{{ route('web.static.page', ['slug' => 'about-us']) }}"
+                                        class="btn primary">About Us</a>
                                 </div>
                             </div>
                         </div>
@@ -185,8 +205,8 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
                                     pellentesque, faucibus libero eu, gravida quam. </p>
                                 <div class="button">
-                                    <a href="#" class="btn">Get Appointment</a>
-                                    <a href="#" class="btn primary">Conatct Now</a>
+                                    <a href="{{ route('web.appointment') }}" class="btn">Get Appointment</a>
+                                    <a href="{{ route('web.contact.index') }}" class="btn primary">Conatct Now</a>
                                 </div>
                             </div>
                         </div>
@@ -198,66 +218,235 @@
     </section>
     <!--/ End Slider Area -->
 
-    <!-- Start Schedule Area -->
-    <section class="schedule">
-        <div class="container">
-            <div class="schedule-inner">
-
+    @if (false)
+        <!-- Start Feautes -->
+        <section class="Feautes section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>We Are Always Ready to Help You & Your Family</h2>
+                            <img src="assets/img/section-img.png" alt="#">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <!-- Start Single features -->
+                        <div class="single-features">
+                            <div class="signle-icon">
+                                <i class="icofont icofont-ambulance-cross"></i>
+                            </div>
+                            <h3>Emergency Help</h3>
+                            <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+                        </div>
+                        <!-- End Single features -->
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <!-- Start Single features -->
+                        <div class="single-features">
+                            <div class="signle-icon">
+                                <i class="icofont icofont-medical-sign-alt"></i>
+                            </div>
+                            <h3>Enriched Pharmecy</h3>
+                            <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+                        </div>
+                        <!-- End Single features -->
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <!-- Start Single features -->
+                        <div class="single-features last">
+                            <div class="signle-icon">
+                                <i class="icofont icofont-stethoscope"></i>
+                            </div>
+                            <h3>Medical Treatment</h3>
+                            <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+                        </div>
+                        <!-- End Single features -->
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!--/End Start schedule Area -->
+        </section>
+        <!--/ End Feautes -->
+    @endif
 
-    <!-- Start Feautes -->
-    <section class="Feautes section">
+    @if (false)
+        <!-- Start Why choose -->
+        <section class="why-choose section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>We Offer Different Services To Improve Your Health</h2>
+                            <img src="{{ asset('assets/img/section-img.png') }}" alt="#">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <!-- Start Choose Left -->
+                        <div class="choose-left">
+                            <h3>Who We Are</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est
+                                lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                himenaeos.
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <ul class="list">
+                                        <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
+                                        <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
+                                        <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul class="list">
+                                        <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
+                                        <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
+                                        <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Choose Left -->
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <!-- Start Choose Rights -->
+                        <div class="choose-right">
+                            <div class="video-image">
+                                <!-- Video Animation -->
+                                <div class="promo-video">
+                                    <div class="waves-block">
+                                        <div class="waves wave-1"></div>
+                                        <div class="waves wave-2"></div>
+                                        <div class="waves wave-3"></div>
+                                    </div>
+                                </div>
+                                <!--/ End Video Animation -->
+                                <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
+                                    class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                        <!-- End Choose Rights -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ End Why choose -->
+    @endif
+
+    @if (false)
+        <!-- Start portfolio -->
+        <section class="portfolio section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
+                            <img src="assets/img/section-img.png" alt="#">
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <div class="owl-carousel portfolio-slider">
+                            <div class="single-pf">
+                                <img src="assets/img/pf1.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf2.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf3.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf4.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf1.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf2.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf3.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                            <div class="single-pf">
+                                <img src="assets/img/pf4.jpg" alt="#">
+                                <a href="portfolio-details.html" class="btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ End portfolio -->
+    @endif
+
+
+
+    <!-- Start service -->
+    <section class="services section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>We Are Always Ready to Help You & Your Family</h2>
-                        <img src="assets/img/section-img.png" alt="#">
+                        <h2>Popular Categories</h2>
+                        <img src="{{ asset('assets/img/section-img.png') }}" alt="#">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
                     </div>
                 </div>
             </div>
+
+            @php
+                $icons = [
+                    'icofont-medical-sign-alt',
+                    'icofont-tooth',
+                    'icofont-heart-beat',
+                    'icofont-ui-cut',
+                    'icofont-listening',
+                    'icofont-eye-alt',
+                    'icofont-blood',
+                    'icofont-tooth',
+                    'icofont-heart-alt',
+                ];
+            @endphp
+
             <div class="row">
-                <div class="col-lg-4 col-12">
-                    <!-- Start Single features -->
-                    <div class="single-features">
-                        <div class="signle-icon">
-                            <i class="icofont icofont-ambulance-cross"></i>
+
+                @if (count($categories))
+                    @foreach ($categories as $category)
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Start Single Service -->
+                            <div class="single-service">
+                                <i class="icofont {{ $icons[$loop->index] ?? 'icofont-heart-alt' }}"></i>
+                                <h4><a
+                                        href="{{ route('web.packages.category', [$category->id]) }}">{{ $category->name ?? '' }}</a>
+                                </h4>
+                                <p>{{ $category->packages()->count() }} package(s) available</p>
+                            </div>
+                            <!-- End Single Service -->
                         </div>
-                        <h3>Emergency Help</h3>
-                        <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                    </div>
-                    <!-- End Single features -->
-                </div>
-                <div class="col-lg-4 col-12">
-                    <!-- Start Single features -->
-                    <div class="single-features">
-                        <div class="signle-icon">
-                            <i class="icofont icofont-medical-sign-alt"></i>
-                        </div>
-                        <h3>Enriched Pharmecy</h3>
-                        <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                    </div>
-                    <!-- End Single features -->
-                </div>
-                <div class="col-lg-4 col-12">
-                    <!-- Start Single features -->
-                    <div class="single-features last">
-                        <div class="signle-icon">
-                            <i class="icofont icofont-stethoscope"></i>
-                        </div>
-                        <h3>Medical Treatment</h3>
-                        <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                    </div>
-                    <!-- End Single features -->
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
-    <!--/ End Feautes -->
+    <!--/ End service -->
+
 
     <!-- Start Fun-facts -->
     <div id="fun-facts" class="fun-facts section overlay">
@@ -312,69 +501,69 @@
     </div>
     <!--/ End Fun-facts -->
 
-    <!-- Start Why choose -->
-    <section class="why-choose section">
+
+
+    <!-- Pricing Table -->
+    <section class="pricing-table section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>We Offer Different Services To Improve Your Health</h2>
-                        <img src="assets/img/section-img.png" alt="#">
+                        <h2>Our Services</h2>
+                        <img src="{{ asset('assets/img/section-img.png') }}" alt="#">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-12">
-                    <!-- Start Choose Left -->
-                    <div class="choose-left">
-                        <h3>Who We Are</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est
-                            lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                        </p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list">
-                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Choose Left -->
-                </div>
-                <div class="col-lg-6 col-12">
-                    <!-- Start Choose Rights -->
-                    <div class="choose-right">
-                        <div class="video-image">
-                            <!-- Video Animation -->
-                            <div class="promo-video">
-                                <div class="waves-block">
-                                    <div class="waves wave-1"></div>
-                                    <div class="waves wave-2"></div>
-                                    <div class="waves wave-3"></div>
+
+                @php
+                    $icons = [
+                        'icofont-medical-sign-alt',
+                        'icofont-tooth',
+                        'icofont-heart-beat',
+                        'icofont-ui-cut',
+                        'icofont-listening',
+                        'icofont-eye-alt',
+                        'icofont-blood',
+                        'icofont-tooth',
+                        'icofont-heart-alt',
+                    ];
+                @endphp
+
+                @if (count($services))
+                    @foreach ($services as $service)
+                        <!-- Single Table -->
+                        <div class="col-lg-3 col-md-12 col-12">
+                            <div class="single-table">
+                                <!-- Table Head -->
+                                <div class="table-head">
+                                    <div class="icon">
+                                        <i class="icofont {{ $icons[$loop->index] }}"></i>
+                                    </div>
+                                    <h4 class="title">{{ $service->title ?? '' }}</h4>
+                                    {{-- <div class="price">
+                                <p class="amount">$199<span>/ Per Visit</span></p>
+                            </div> --}}
                                 </div>
+                                <!-- Table List -->
+
+                                <div class="table-bottom">
+                                    <a class="btn"
+                                        href="{{ route('web.services.show', ['slug' => $service->slug]) }}">Book
+                                        Now</a>
+                                </div>
+                                <!-- Table Bottom -->
                             </div>
-                            <!--/ End Video Animation -->
-                            <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
-                                class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
                         </div>
-                    </div>
-                    <!-- End Choose Rights -->
-                </div>
+                    @endforeach
+                @endif
+                <!-- End Single Table-->
             </div>
         </div>
     </section>
-    <!--/ End Why choose -->
+    <!--/ End Pricing Table -->
+
 
     <!-- Start Call to action -->
     <section class="call-action overlay" data-stellar-background-ratio="0.5">
@@ -386,7 +575,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec
                             gravida.</p>
                         <div class="button">
-                            <a href="#" class="btn">Contact Now</a>
+                            <a href="{{ route('web.contact.index') }}" class="btn">Contact Now</a>
                             <a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -396,315 +585,48 @@
     </section>
     <!--/ End Call to action -->
 
-    <!-- Start portfolio -->
-    <section class="portfolio section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
-                        <img src="assets/img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-12">
-                    <div class="owl-carousel portfolio-slider">
-                        <div class="single-pf">
-                            <img src="assets/img/pf1.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf2.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf3.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf4.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf1.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf2.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf3.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="assets/img/pf4.jpg" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ End portfolio -->
-
-    <!-- Start service -->
-    <section class="services section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>We Offer Different Services To Improve Your Health</h2>
-                        <img src="assets/img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-prescription"></i>
-                        <h4><a href="service-details.html">General Treatment</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-tooth"></i>
-                        <h4><a href="service-details.html">Teeth Whitening</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-heart-alt"></i>
-                        <h4><a href="service-details.html">Heart Surgery</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-listening"></i>
-                        <h4><a href="service-details.html">Ear Treatment</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-eye-alt"></i>
-                        <h4><a href="service-details.html">Vision Problems</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="icofont icofont-blood"></i>
-                        <h4><a href="service-details.html">Blood Transfusion</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut
-                            imperdiet. </p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ End service -->
-
-    <!-- Pricing Table -->
-    <section class="pricing-table section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>We Provide You The Best Treatment In Resonable Price</h2>
-                        <img src="assets/img/section-img.png" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont icofont-ui-cut"></i>
-                            </div>
-                            <h4 class="title">Plastic Suggery</h4>
-                            <div class="price">
-                                <p class="amount">$199<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Nullam interdum enim</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont icofont-tooth"></i>
-                            </div>
-                            <h4 class="title">Teeth Whitening</h4>
-                            <div class="price">
-                                <p class="amount">$299<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont-heart-beat"></i>
-                            </div>
-                            <h4 class="title">Heart Suggery</h4>
-                            <div class="price">
-                                <p class="amount">$399<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-                            <li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-            </div>
-        </div>
-    </section>
-    <!--/ End Pricing Table -->
-
-
-
     <!-- Start Blog Area -->
     <section class="blog section" id="blog">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Keep up with Our Most Recent Medical News.</h2>
+                        <h2>Most common packages</h2>
                         <img src="assets/img/section-img.png" alt="#">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="assets/img/blog1.jpg" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">22 Aug, 2020</div>
-                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+
+                @if (count($packages))
+                    @foreach ($packages as $package)
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Single Blog -->
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <img src="{{ asset('storage/' . $package->image) }}" alt="#">
+                                </div>
+                                <div class="news-body">
+                                    <div class="news-content">
+                                        <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+
+                                        <p class="text">{{ $package->short_description ?? '' }}</p>
+
+                                        <a href="{{ route('web.packages.show', ['slug' => $package->slug]) }}"
+                                            class="date">Book Now</a>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- End Single Blog -->
                         </div>
-                    </div>
-                    <!-- End Single Blog -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="assets/img/blog2.jpg" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">15 Jul, 2020</div>
-                                <h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Blog -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="assets/img/blog3.jpg" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">05 Jan, 2020</div>
-                                <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Blog -->
-                </div>
+                    @endforeach
+                @endif
+
             </div>
         </div>
     </section>
     <!-- End Blog Area -->
-
-
-
 
     <!-- Footer Area -->
     <footer id="footer" class="footer ">
@@ -740,7 +662,7 @@
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
-                                        <li><a href="/contact-us"><i class="fa fa-caret-right"
+                                        <li><a href="{{ route('web.contact.index') }}"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>

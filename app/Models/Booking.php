@@ -9,4 +9,9 @@ class Booking extends BaseModel
 {
     /** @use HasFactory<\Database\Factories\BookingFactory> */
     use HasFactory;
+
+    public function beneficiaries()
+    {
+        return $this->hasMany(Beneficiary::class);
+    }
 }

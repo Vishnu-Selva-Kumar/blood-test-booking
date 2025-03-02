@@ -74,6 +74,10 @@
         background: #1a76d1 !important;
         color: white !important;
     }
+
+    span.current {
+        font-size: 10px;
+    }
 </style>
 
 <body>
@@ -130,7 +134,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="{{ asset('assets/img/logo.png') }}" alt="#"></a>
+                                <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -143,10 +147,14 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="">Home </a></li>
-                                        <li><a href="/services">Services </a></li>
-                                        <li><a href="/packages">Packages </a></li>
-                                        <li><a href="/contact-us">Contact Us</a></li>
+                                        <li class="{{ request()->routeIs('web.home') ? 'active' : '' }}"><a
+                                                href="{{ route('web.home') }}">Home</a></li>
+                                        <li class="{{ request()->routeIs('web.services.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.services.index') }}">Services</a></li>
+                                        <li class="{{ request()->routeIs('web.packages.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.packages.index') }}">Packages</a></li>
+                                        <li class="{{ request()->routeIs('web.contact.index') ? 'active' : '' }}"><a
+                                                href="{{ route('web.contact.index') }}">Contact us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -155,7 +163,7 @@
 
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="/appointment" class="btn">Book Appointment</a>
+                                <a href="{{ route('web.appointment') }}" class="btn">Book Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -174,7 +182,7 @@
                     <div class="col-12">
                         <h2>{{ $package->title ?? '' }}</h2>
                         <ul class="bread-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><i class="icofont-simple-right"></i></li>
                             <li class="active">{{ $package->title ?? '' }}</li>
                         </ul>
@@ -244,8 +252,8 @@
                         @endif
                     @endforeach
                     <div class="doctor-details-item doctor-details-left">
-                        @if($package->image)
-                        <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                        @if ($package->imageurl)
+                            <img src="{{ $package->imageurl }}" alt="#" />
                         @endif
                         <div class="doctor-details-contact">
                             <div class="appointment-inner">
@@ -257,14 +265,14 @@
                                 <form class="form" action="{{ route('web.packages.store') }}" method="post">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <input type="text" name="appointment_at" required
                                                     placeholder="Appointment Date" id="datepicker" />
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <div class="nice-select form-control wide" tabindex="0">
                                                     <input type="hidden" name="number_of_persons" value="">
@@ -281,30 +289,42 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="row show_number_of_persons_list">
+                                    </div>
+
+                                    <div class="row">
+
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="name" id="name" type="text" required
-                                                    placeholder="Full Name" />
+                                                <input name="name" id="name" type="text"
+                                                    autocomplete="off" required placeholder="Your Full Name" />
                                             </div>
                                         </div>
+
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <input name="email" id="email" type="email"
-                                                    placeholder="Email ID" />
+                                                    autocomplete="off" placeholder="Email ID" />
                                             </div>
                                         </div>
+
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="phone_number" id="phone_number" type="text" required
-                                                    placeholder="Mobile number" />
+                                                <input name="phone_number" id="phone_number" type="text"
+                                                    autocomplete="off" required placeholder="Mobile number" />
                                             </div>
                                         </div>
+
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <textarea name="address" id="address" placeholder="Write Your address Here....."></textarea>
+                                                <textarea name="address" autocomplete="off" id="address" placeholder="Write Your address Here....."></textarea>
                                             </div>
                                         </div>
+
                                     </div>
+
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
