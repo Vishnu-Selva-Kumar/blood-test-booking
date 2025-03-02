@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ServiceController;
@@ -12,6 +13,8 @@ Route::name('web.')->group(function () {
         ->whereIn('slug', config('web.constants.static-pages') ?? [])->name('static.page');
 
     Route::get('/', [StaticPageController::class, 'create'])->name('home');
+
+    Route::get('media/{path}', [BaseController::class, 'media'])->where('path', '(.*)')->name('media');
 
 
     Route::resource('packages', PackageController::class)->parameters(['packages' => 'slug'])

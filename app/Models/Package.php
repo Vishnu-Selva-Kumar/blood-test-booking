@@ -11,6 +11,9 @@ class Package extends BaseModel
     /** @use HasFactory<\Database\Factories\PackageFactory> */
     use HasFactory;
 
+    protected $appends = ['imageUrl'];
+
+
     protected function casts(): array
     {
         return [
@@ -27,5 +30,17 @@ class Package extends BaseModel
     public function testLists(): MorphMany
     {
         return $this->morphMany(TestList::class, 'testlistable');
+    }
+
+    public function scopeImageUrl($query)
+    {
+
+
+        return route('web.media', ['path' => $query->image]);
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return $this->image ? route('web.media', ['path' => $this->image]) : null;
     }
 }

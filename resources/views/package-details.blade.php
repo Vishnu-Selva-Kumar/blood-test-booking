@@ -74,6 +74,10 @@
         background: #1a76d1 !important;
         color: white !important;
     }
+
+    span.current {
+        font-size: 10px;
+    }
 </style>
 
 <body>
@@ -248,8 +252,8 @@
                         @endif
                     @endforeach
                     <div class="doctor-details-item doctor-details-left">
-                        @if ($package->image)
-                            <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                        @if ($package->imageurl)
+                            <img src="{{ $package->imageurl }}" alt="#" />
                         @endif
                         <div class="doctor-details-contact">
                             <div class="appointment-inner">
@@ -294,15 +298,15 @@
 
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="name" id="name" type="text" autocomplete="off"
-                                                    required placeholder="Your Full Name" />
+                                                <input name="name" id="name" type="text"
+                                                    autocomplete="off" required placeholder="Your Full Name" />
                                             </div>
                                         </div>
 
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <input name="email" id="email" type="email" autocomplete="off"
-                                                    placeholder="Email ID" />
+                                                <input name="email" id="email" type="email"
+                                                    autocomplete="off" placeholder="Email ID" />
                                             </div>
                                         </div>
 

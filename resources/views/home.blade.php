@@ -575,7 +575,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec
                             gravida.</p>
                         <div class="button">
-                            <a href="#" class="btn">Contact Now</a>
+                            <a href="{{ route('web.contact.index') }}" class="btn">Contact Now</a>
                             <a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -608,7 +608,7 @@
                                     <img src="{{ asset('storage/' . $package->image) }}" alt="#">
                                 </div>
                                 <div class="news-body">
-                                    <div class="news-content">                                        
+                                    <div class="news-content">
                                         <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
 
                                         <p class="text">{{ $package->short_description ?? '' }}</p>
@@ -662,7 +662,7 @@
                                                     aria-hidden="true"></i>Services</a></li>
                                         <li><a href="/packages"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Packages</a></li>
-                                        <li><a href="/contact-us"><i class="fa fa-caret-right"
+                                        <li><a href="{{ route('web.contact.index') }}"><i class="fa fa-caret-right"
                                                     aria-hidden="true"></i>Contact&nbsp;Us</a></li>
                                     </ul>
                                 </div>

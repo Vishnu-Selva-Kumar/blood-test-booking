@@ -49,7 +49,8 @@
         .single-news>.news-body>.news-content>p {
             min-height: 130px;
         }
-        .single-news > .news-body > .news-content > h2 {
+
+        .single-news>.news-body>.news-content>h2 {
             font-size: 16px;
         }
     </style>
@@ -242,7 +243,9 @@
                                 <!-- Single Blog -->
                                 <div class="single-news">
                                     <div class="news-head">
-                                        <img src="{{ asset('storage/' . $package->image) }}" alt="#" />
+                                        @if ($package->imageUrl)
+                                            <img src="{{ $package->imageUrl }}" alt="#" />
+                                        @endif
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
@@ -261,10 +264,7 @@
                         @endforeach
 
                         <div class="col-12">
-
                             {!! $packages->withQueryString()->links('pagination::custom') !!}
-
-
                         </div>
                     </div>
                 </div>
@@ -276,6 +276,7 @@
 
     <!-- Footer Area -->
     <footer id="footer" class="footer ">
+
         <!-- Footer Top -->
         <div class="footer-top">
             <div class="container">

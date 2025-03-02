@@ -14,12 +14,12 @@ class PackageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Category $category = null)
+    public function index(?Category $category =NULL)
     {
         if (isset($category)) {
             $packages = Package::where('category_id', $category->id)->paginate(9);
         } else {
-            $packages = Package::paginate(9);
+           $packages = Package::paginate(9);
         }
 
         $categories = Category::query()->whereActive()->latest()->get()->take(25);
