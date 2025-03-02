@@ -45,12 +45,11 @@ class PackageResource extends Resource
     {
         return $form
             ->schema([
-
                 Section::make()
                     ->columns(4)
                     ->schema([
                         TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                        TextInput::make('slug'),
+                        TextInput::make('slug')->label('Slug')->unique(ignorable: fn($record) => $record)->required(),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                         Tabs::make('Tabs')
