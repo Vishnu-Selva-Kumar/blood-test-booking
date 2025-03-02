@@ -30,11 +30,6 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Tabs;
 use Filament\Support\Enums\Alignment;
 
-
-
-
-
-
 class PackageResource extends Resource
 {
     protected static ?string $model = Package::class;
@@ -85,7 +80,7 @@ class PackageResource extends Resource
                                     ]),
                                 Tabs\Tab::make('Upload Images')
                                     ->schema([
-                                        FileUpload::make('image')->image()->directory('packages'),
+                                        FileUpload::make('image')->image()->directory('packages')->optimize('webp')->resize(50),
                                     ]),
                             ])->columnSpanFull()
                     ]),

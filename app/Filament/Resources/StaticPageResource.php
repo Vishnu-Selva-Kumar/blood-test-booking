@@ -60,7 +60,7 @@ class StaticPageResource extends Resource
                             'table',
                             'undo',
                         ])->label('Description')->columnSpanFull(),
-                        FileUpload::make('images')->image()->directory('staticpages'),
+                        FileUpload::make('images')->image()->directory('staticpages')->optimize('webp')->resize(50),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
                     ])
                 //
