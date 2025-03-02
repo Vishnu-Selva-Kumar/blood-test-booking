@@ -21,6 +21,7 @@ class DemoDataSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             StaticPageSeeder::class,
+            PackageSeeder::class,
         ]);
         // Create 10 categories
         // Package::factory(10)->create();

@@ -41,6 +41,6 @@ class Package extends BaseModel
 
     public function getImageUrlAttribute()
     {
-        return $this->image ? route('web.media', ['path' => $this->image]) : null;
+        return $this->image && file_exists(storage_path('/app/public/'. $this->image)) ? route('web.media', ['path' => $this->image]) : null;
     }
 }
