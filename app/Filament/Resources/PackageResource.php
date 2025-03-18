@@ -52,6 +52,8 @@ class PackageResource extends Resource
                         TextInput::make('slug')->label('Slug')->unique(ignorable: fn($record) => $record)->required(),
                         Select::make('category_id')->label('Category')->options(fn() => Category::pluck('name', 'id'))->required()->searchable(),
                         Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                        TextInput::make('price')->label('Price')->nullable()->numeric()->minValue(0),
+                        TextInput::make('special_price')->label('Special price')->nullable()->numeric()->minValue(0),
                         Tabs::make('Tabs')
                             ->tabs([
                                 Tabs\Tab::make('Short Description')

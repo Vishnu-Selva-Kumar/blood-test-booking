@@ -53,6 +53,82 @@
         .single-news>.news-body>.news-content>h2 {
             font-size: 16px;
         }
+
+        .card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .card .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .card:hover .card-content {
+            opacity: 1;
+        }
+
+        .card:hover img {
+            opacity: 0.3;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        .card ul li {
+            font-size: 12px;
+            margin-bottom: 0px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
@@ -239,13 +315,24 @@
                 <div class="col-lg-9 col-12">
                     <div class="row">
                         @foreach ($packages as $package)
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-6 col-md-6 col-12">
                                 <!-- Single Blog -->
                                 <div class="single-news">
-                                    <div class="news-head">
+                                    <div class="news-head card">
                                         @if ($package->imageUrl)
                                             <img src="{{ $package->imageUrl }}" alt="#" />
                                         @endif
+                                        <div class="card-content">
+
+                                            <p>{{ $package->title ?? '' }} ({{ $package->testLists()->count() ?? 0 }} Tests) @ RS. {{ $package->price ?? ''}}</p>
+                                            <ul>
+                                            @foreach ( $package->testLists as $testlist )
+                                            <li>{{ $testlist->title ?? '' }}</li>
+                                            @endforeach
+                                            </ul>
+                                        </div>
+
+
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
