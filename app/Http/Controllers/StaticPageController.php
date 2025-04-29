@@ -38,7 +38,7 @@ class StaticPageController extends Controller
     {
         $services = Service::whereActive()->take(12)->get();
         $categories = Category::whereActive()->get()->take(12);
-        $packages = Package::whereActive()->get()->take(3);
+        $packages = Package::whereActive()->get()->take(9);
         
         return view('home', compact('services', 'categories', 'packages'));
     }
