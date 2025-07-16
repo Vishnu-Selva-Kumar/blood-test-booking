@@ -54,7 +54,7 @@ class ServiceResource extends Resource
                             ->schema([
                                 TextInput::make('title')->label('Title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                                 TextInput::make('slug'),
-                                Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status')))),
+                                Select::make('status')->options(array_map('ucfirst', array_flip(config('web.constants.status'))))->required(),
                                 Tabs::make('Tabs')
                                     ->tabs([
                                         Tab::make('Short Description')
